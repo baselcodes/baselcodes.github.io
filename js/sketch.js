@@ -1,5 +1,5 @@
 const NEW_LINE = '$'
-const SPOOKY_TEXT = 'BASEL.CODES'
+const SPOOKY_TEXT = 'BASEL.CODES 09.02.19 @H3K && @HGK'
 
 
 let index = 0;
