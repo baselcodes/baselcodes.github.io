@@ -15,13 +15,8 @@ body{
 }
 
 #title-animation{
-<<<<<<< HEAD
-    font-size: 4vh;
-    text-align: center;
-=======
-    /* font-size: 1vh; */
+    font-size: 5vh;
     font-family: monospace;
->>>>>>> 380972ebf798763849ee289055e608b7d1581d85
     position: fixed;
     top: 50%;
     left: 50%;
