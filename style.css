@@ -1,6 +1,12 @@
+
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:900');
+
 body{
     margin: 0px;
     padding: 0px;
+
+    font-family: 'Source Code Pro', monospace;
+
 }
 #p5{
     position: fixed;
@@ -15,9 +21,11 @@ body{
 }
 
 #title-animation{
+    color: #fff;
     text-align: center;
     font-size: 5vh;
-    font-family: monospace;
+    text-shadow: #00f 3px 3px;
+    font-weight: bolder;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -28,7 +36,9 @@ body{
     -webkit-transform: translate(-50%, -50%); 
     -o-transform: translate(-50%, -50%);
 }
-
+#title-animation a{
+    color: #fff;
+}
 #title-animation span:hover{
     font-family: monospace;
     font-size: 6.5vh;
