@@ -15,6 +15,7 @@ body{
 }
 
 #title-animation{
+    text-align: center;
     font-size: 5vh;
     font-family: monospace;
     position: fixed;
