@@ -1,11 +1,11 @@
 const NEW_LINE = '$'
-const SPOOKY_TEXT = 'BASEL.CODES 09.02.19 @H3K && @HGK'
+const TITLE = 'BASEL.CODES 📆 09.02.19 🏛 @H3K && 🏫 @HGK'
 
 
 let index = 0;
 selectedText = '';
 write = true;
-selectedText = SPOOKY_TEXT.split('');
+selectedText = TITLE.split('');
 if (selectedText != '') {
   SI = setInterval(() => {
     let myDiv = document.getElementById('title-animation');
