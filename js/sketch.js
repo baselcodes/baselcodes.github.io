@@ -1,0 +1,28 @@
+const NEW_LINE = '$'
+const SPOOKY_TEXT = 'BASEL.CODES'
+
+
+let index = 0;
+selectedText = '';
+write = true;
+selectedText = SPOOKY_TEXT.split('');
+if (selectedText != '') {
+  SI = setInterval(() => {
+    let myDiv = document.getElementById('title-animation');
+    if (write) {
+      let letter = selectedText[index];
+      if (letter === NEW_LINE) letter = '<br>'
+      myDiv.innerHTML += letter;
+      myDiv.scrollTop = myDiv.scrollHeight;
+      index++;
+    }
+    if (index >= selectedText.length) {
+      write = false;
+      setTimeout(() => {
+        clearInterval(SI);
+      }, 2000);
+      $('#title-animation').lettering();
+    }
+  }, 100);
+
+}
