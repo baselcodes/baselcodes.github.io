@@ -37,3 +37,25 @@ window.onmousemove = (event) => {
   // console.log(shadow);
   document.getElementById('title-animation').style.textShadow = shadow;
 }
+
+let cnv;
+let balls = [];
+function setup(){
+  cnv = createCanvas(innerWidth, innerHeight);
+  cnv.parent('p5')
+  for(let i = 0; i< 100; i++)balls.push(new Ball());
+}
+
+function draw(){
+  background(255);
+  for (const ball of balls) {
+    ball.update();
+    ball.proximity(balls);
+    ball.show();  
+  }
+
+}
+
+function windowResized(){
+  resizeCanvas(innerWidth, innerHeight);
+}
