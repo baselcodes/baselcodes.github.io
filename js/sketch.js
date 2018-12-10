@@ -35,7 +35,7 @@ window.onmousemove = (event) => {
   // console.log(x, y);
   const shadow = '#ff0 ' + x * 5 + 'px ' + y * 5 + 'px';
   // console.log(shadow);
-  document.getElementById('title-animation').style.textShadow = shadow;
+  // document.getElementById('title-animation').style.textShadow = shadow;
 }
 
 let cnv;
@@ -43,7 +43,7 @@ let balls = [];
 function setup(){
   cnv = createCanvas(innerWidth, innerHeight);
   cnv.parent('p5')
-  for(let i = 0; i< 100; i++)balls.push(new Ball());
+  for(let i = 0; i< 50; i++)balls.push(new Ball());
 }
 
 function draw(){
@@ -51,9 +51,8 @@ function draw(){
   for (const ball of balls) {
     ball.update();
     // ball.proximity(balls);
-    ball.show(balls);  
+    ball.show(balls);
   }
-
 }
 
 function windowResized(){
