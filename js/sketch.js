@@ -33,7 +33,7 @@ window.onmousemove = (event) => {
   const x = ((event.clientX / innerWidth) - 0.5) * 2;
   const y = ((event.clientY / innerHeight) - 0.5) * 2;
   // console.log(x, y);
-  const shadow = '#00f ' + x * 5 + 'px ' + y * 5 + 'px';
+  const shadow = '#ff0 ' + x * 5 + 'px ' + y * 5 + 'px';
   // console.log(shadow);
   document.getElementById('title-animation').style.textShadow = shadow;
 }
@@ -47,11 +47,11 @@ function setup(){
 }
 
 function draw(){
-  background(255);
+  background(200);
   for (const ball of balls) {
     ball.update();
-    ball.proximity(balls);
-    ball.show();  
+    // ball.proximity(balls);
+    ball.show(balls);  
   }
 
 }
