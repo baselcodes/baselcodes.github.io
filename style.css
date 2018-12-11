@@ -38,6 +38,10 @@ body{
     -o-transform: translate(-50%, -50%);
     */
 }
+a {
+    text-decoration: none:
+}
+
 #title-animation a{
     color: #000;
     background-color: #fff;
@@ -45,7 +49,7 @@ body{
     box-shadow: #00f 3px 3px;
     padding: 5px;
     border-radius: 0px;
-    text-decoration: none:
+    text-decoration: none;
 }
 #title-animation a:hover{
     background-color: #ff0;
