@@ -43,9 +43,11 @@ class Ball {
         this.edges();
     }
     edges() {
+        // ADD edges of the div
+        // const div_bbox = document.getElementById('title-animation').getBoundingClientRect();
+        // console.log(div_bbox);
         if (this.pos.x > width - (this.r / 2) || this.pos.x <  this.r / 2) {
             this.directionx *= -1;
-
         }
         if (this.pos.y > height - (this.r / 2) || this.pos.y < this.r / 2) {
             this.directiony *= -1;

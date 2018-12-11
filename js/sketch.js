@@ -3,8 +3,8 @@ const TITLE = 'BASEL.CODES$📆$09.02.19$@H3K🏛 && @HGK🏫$📣$OPEN CALL$FOR
 
 
 let index = 0;
-selectedText = '';
-write = true;
+let selectedText = '';
+let write = true;
 selectedText = TITLE.split('');
 if (selectedText != '') {
   SI = setInterval(() => {
@@ -23,6 +23,8 @@ if (selectedText != '') {
       }, 2000);
       myDiv.innerHTML = 'BASEL.CODES<br>📆<br>09.02.19<br><a href="http://www.hek.ch/" target="_blank" rel="noopener noreferrer">@H3K🏛</a> && <a href="https://www.fhnw.ch/de/die-fhnw/hochschulen/hgk" target="_blank" rel="noopener noreferrer">@HGK🏫</a><br>📣<br><a href="https://docs.google.com/forms/d/e/1FAIpQLScsw6eTpP0SagAixIytgZOCWeMpwjwcjG1QJT7PN9V0kR8xIA/viewform" target="_blank" rel="noopener noreferrer">OPEN CALL</a><br>FOR WORKSHOPS AND PRESENTATIONS'
       //   $('#title-animation').lettering();
+
+      
     }
   }, 100);
 
@@ -36,17 +38,19 @@ window.onmousemove = (event) => {
   const shadow = '#ff0 ' + x * 5 + 'px ' + y * 5 + 'px';
   // console.log(shadow);
   // document.getElementById('title-animation').style.textShadow = shadow;
+  
 }
 
 let cnv;
 let balls = [];
-function setup(){
+function setup() {
   cnv = createCanvas(innerWidth, innerHeight);
   cnv.parent('p5')
-  for(let i = 0; i< 50; i++)balls.push(new Ball());
+  for (let i = 0; i < 1; i++)balls.push(new Ball());
+  frameRate(3);
 }
 
-function draw(){
+function draw() {
   background(200);
   for (const ball of balls) {
     ball.update();
@@ -55,6 +59,6 @@ function draw(){
   }
 }
 
-function windowResized(){
+function windowResized() {
   resizeCanvas(innerWidth, innerHeight);
 }

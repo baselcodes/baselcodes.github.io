@@ -30,7 +30,7 @@ body{
     position: fixed;
     top: 50%;
     left: 50%;
-    width: min-content;
+    width: auto;
     height: auto;
     transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
