@@ -1,5 +1,5 @@
-const NEW_LINE = '$'
-const TITLE = 'BASEL.CODES$📆$09.02.19$@H3K🏛 && @HGK🏫$📣$OPEN CALL$FOR WORKSHOPS AND PRESENTATIONS'
+//const NEW_LINE = '$'
+const TITLE = 'basel.codes 📆 09.02.19 🏛 @h3k && 🏫 @hgk 📣 open call for workshops and presentations 🤟'
 
 
 let index = 0;
@@ -11,7 +11,7 @@ if (selectedText != '') {
     let myDiv = document.getElementById('title-animation');
     if (write) {
       let letter = selectedText[index];
-      if (letter === NEW_LINE) letter = '<br>'
+      //if (letter === NEW_LINE) letter = '<br>'
       myDiv.innerHTML += letter;
       myDiv.scrollTop = myDiv.scrollHeight;
       index++;
@@ -21,7 +21,7 @@ if (selectedText != '') {
       setTimeout(() => {
         clearInterval(SI);
       }, 2000);
-      myDiv.innerHTML = 'BASEL.CODES<br>📆<br>09.02.19<br><a href="http://www.hek.ch/" target="_blank" rel="noopener noreferrer">@H3K🏛</a> && <a href="https://www.fhnw.ch/de/die-fhnw/hochschulen/hgk" target="_blank" rel="noopener noreferrer">@HGK🏫</a><br>📣<br><a href="https://docs.google.com/forms/d/e/1FAIpQLScsw6eTpP0SagAixIytgZOCWeMpwjwcjG1QJT7PN9V0kR8xIA/viewform" target="_blank" rel="noopener noreferrer">OPEN CALL</a><br>FOR WORKSHOPS AND PRESENTATIONS'
+      myDiv.innerHTML = '<p>basel.codes</p><p>📆 09.02.19</p><a href="http://www.hek.ch/" target="_blank" rel="noopener noreferrer">🏛 @h3k</a><p>&&</p><a href="https://www.fhnw.ch/de/die-fhnw/hochschulen/hgk" target="_blank" rel="noopener noreferrer">🏫 @hgk</a><a href="https://docs.google.com/forms/d/e/1FAIpQLScsw6eTpP0SagAixIytgZOCWeMpwjwcjG1QJT7PN9V0kR8xIA/viewform" target="_blank" rel="noopener noreferrer">📣 open call for workshops and presentations</a><a href="mailto:helloworld@basel.codes">🤟</a>'
       //   $('#title-animation').lettering();
 
       
