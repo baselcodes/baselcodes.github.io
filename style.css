@@ -1,12 +1,10 @@
 
-@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:900');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
 
 body{
     margin: 0px;
     padding: 0px;
-
-    font-family: 'Source Code Pro', monospace;
-    /* font-family: monospace; */
+    font-family: 'Roboto Mono', monospace;
 
 }
 #p5{
@@ -24,18 +22,21 @@ body{
 #title-animation{
     color: #000;
     text-align: center;
-    font-size: 5vh;
+    font-size: 3vh;
     /* text-shadow: #ff0 3px 3px; */
-    font-weight: bolder;
+    font-weight: normal;
     position: fixed;
     top: 50%;
-    left: 50%;
-    width: min-content;
+    /*left: 50%;*/
+    left: 0px;
+    width: 100%;
     height: auto;
+    /*
     transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%); 
     -o-transform: translate(-50%, -50%);
+    */
 }
 #title-animation a{
     color: #000;
@@ -43,12 +44,14 @@ body{
     border: solid 3px #000;
     box-shadow: #00f 3px 3px;
     padding: 5px;
-    border-radius: 0px
+    border-radius: 0px;
+    text-decoration: none:
 }
 #title-animation a:hover{
     background-color: #ff0;
     box-shadow: #00f 5px 5px;
     border-radius: 50px;
+    text-decoration: none;
 }
 #title-animation span:hover{
     font-family: monospace;
