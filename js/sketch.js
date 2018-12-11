@@ -11,7 +11,7 @@ if (selectedText != '') {
     let myDiv = document.getElementById('title-animation');
     if (write) {
       let letter = selectedText[index];
-      if (letter === NEW_LINE) letter = '<br>'
+      //if (letter === NEW_LINE) letter = '<br>'
       myDiv.innerHTML += letter;
       myDiv.scrollTop = myDiv.scrollHeight;
       index++;
