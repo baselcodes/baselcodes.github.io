@@ -58,3 +58,6 @@ function draw(){
 function windowResized(){
   resizeCanvas(innerWidth, innerHeight);
 }
+
+window.onblur = function() { noLoop(); }
+window.onfocus = function() { loop(); }
