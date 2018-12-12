@@ -8,12 +8,12 @@
     <link rel="stylesheet" type="text/css" media="screen" href="style.css">
     <script src="js/libraries/jquery-3.3.1.min.js"></script>
     <script src="js/libraries/jquery.lettering-0.6.1.min.js"></script>
-    <!-- <script src="js/libraries/p5.min.js"></script> -->
-    <!-- <script src="js/libraries/p5.dom.min.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
-    <script src="js/sketch.js"></script>
+    <script src="js/libraries/p5.min.js"></script>
+    <script src="js/libraries/p5.dom.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script> -->
     <script src="js/ball.js"></script>
+    <script src="js/sketch.js"></script>
 </head>
 <body>
     <div class="container"></div>
@@ -24,22 +24,34 @@
         <p>Imprint</p>
     </div>
 
-    <div id="footer">
+    <!-- <div id="footer">
         <p id="imprint" onclick="hideImprint()">
             basel.codes is a collective of coders, artists and designers from basel currently consisting of Ted Davis, Max Frischknecht, Yann Martins, Philipp Möckli, Pedro Neves and Andrea Zaccuri.<br><br>
             We are interested in the creative potential of code and are open, and in solidarity with, people from every gender identity and expression, sexual orientation, race, ethnicity, language, neuro-type, size, ability, class, religion, culture, subculture, political opinion, age, skill level, occupation, and background.
-        </div>
+        </p>
+        </div> -->
     </div>
 
     <script>
+        const imprint_text = '<p>basel.codes is a collective of coders, artists and designers from basel currently consisting of Ted Davis, Max Frischknecht, Yann Martins, Philipp Möckli, Pedro Neves and Andrea Zaccuri.<br><br> We are interested in the creative potential of code and are open, and in solidarity with, people from every gender identity and expression, sexual orientation, race, ethnicity, language, neuro-type, size, ability, class, religion, culture, subculture, political opinion, age, skill level, occupation, and background.</p>';
+        const imprint = '<p>Imprint</p>';
+        // document.getElementById('imprint').onmouseover = (event, el)=>{
+        //     console.log(el);
+        // }
         function showImprint() {
-            document.getElementById("imprint").style.opacity = "1";
-            document.getElementById("imprint-title").style.opacity = "0";
-            console.log(imprint);
+            // document.getElementById('imprint').style.display = 'block';
+            document.getElementById('imprint-title').innerHTML = imprint_text;
+            // document.getElementById('imprint').style.opacity = '1';
+            // document.getElementById('imprint-title').style.display = 'none';
+            // document.getElementById('imprint-title').style.opacity = '0';
+            // console.log(imprint);
         }
         function hideImprint() {
-            document.getElementById("imprint").style.opacity = "0";
-            document.getElementById("imprint-title").style.opacity = "1";
+            document.getElementById('imprint-title').innerHTML = imprint;
+            // document.getElementById('imprint').style.display = 'none';
+            // document.getElementById('imprint').style.opacity = '0';
+            // document.getElementById('imprint-title').style.display = 'block';
+            // document.getElementById('imprint-title').style.opacity = '1';
 
         }
     </script>
