@@ -11,8 +11,9 @@ class Ball {
     constructor() {
         this.color = random(colors);
         this.pos = createVector(random(width), random(height));
-        this.vel = createVector(random(-3, 3), random(-3, 3));
-        this.r = random(6, 12);
+        this.rvel = 2;
+        this.vel = createVector(random(-this.rvel, this.rvel), random(-this.rvel, this.rvel));
+        this.r = random(5, 25);
         this.directionx = 1;
         this.directiony = 1;
         this.maxSpeed = 50;
@@ -23,16 +24,17 @@ class Ball {
         this.proximity(balls);
         noFill();
         stroke(0, 0, 255);
-        beginShape();
+        //beginShape();
         for (const p of this.trail) {
-            vertex(p.x, p.y);
+            //vertex(p.x, p.y);
+            ellipse(this.pos.x, this.pos.y, this.r);
         }
-        endShape();
+        //endShape();
         noStroke();
         fill(0, 0, 255);
         // stroke(255, 255, 0);
         // fill(this.color);
-        ellipse(this.pos.x, this.pos.y, this.r);
+        //ellipse(this.pos.x, this.pos.y, this.r);
     }
     update() {
         this.pos.x += this.vel.x * this.directionx;
@@ -60,7 +62,8 @@ class Ball {
                     line(ball.pos.x, ball.pos.y, this.pos.x, this.pos.y);
                     const dir = p5.Vector.sub(this.pos, ball.pos);
                     dir.normalize();
-
+                    if(this.r < 50)
+                        this.r += .1;
                     this.pos.add(dir);
                 }
             }

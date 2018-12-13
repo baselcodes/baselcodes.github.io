@@ -1,31 +1,39 @@
 //const NEW_LINE = '$'
-const TITLE = 'basel.codes 🎉 processing community day 📆 09.02.19 🏛 @h3k && 🏫 @hgk basel, switzerland 📣 open call for workshops and presentations 🤟'
-
+const TITLES = ['basel.codes', '🎉 processing community day', '📆 09.02.19', '🏛 @h3k','&&', '🏫 @hgk', 'basel, switzerland', '📣 open call for workshops and presentations', '🤟'];
 
 let index = 0;
-selectedText = '';
-write = true;
-selectedText = TITLE.split('');
-if (selectedText != '') {
+let elmIndex = 0;
+let elms = document.getElementById('title-animation').children;
+
+// purge info on first load (but SEO saw it!)
+if(!sessionStorage.getItem('baselcodes')){
+  for(let i=0; i< elms.length; i++){
+    elms[i].style.visibility = "hidden";
+    elms[i].innerHTML = "";
+  }
+
+  write = true;
+
   SI = setInterval(() => {
-    let myDiv = document.getElementById('title-animation');
+    selectedText = TITLES[elmIndex].split('');
+    elms[elmIndex].style.visibility = "visible";
     if (write) {
       let letter = selectedText[index];
-      //if (letter === NEW_LINE) letter = '<br>'
-      myDiv.innerHTML += letter;
-      myDiv.scrollTop = myDiv.scrollHeight;
+      elms[elmIndex].innerHTML += letter;
       index++;
     }
-    if (index >= selectedText.length) {
-      write = false;
-      setTimeout(() => {
-        clearInterval(SI);
-      }, 2000);
-      myDiv.innerHTML = '<p>basel.codes</p><a href="https://day.processing.org" target="_blank" >🎉 processing community day</a><p>📆 09.02.19</p><a href="http://www.hek.ch/" target="_blank" >🏛 @h3k</a><p>&&</p><a href="https://www.fhnw.ch/de/die-fhnw/hochschulen/hgk" target="_blank" >🏫 @hgk</a><p>basel, switzerland</p><a href="https://docs.google.com/forms/d/e/1FAIpQLScsw6eTpP0SagAixIytgZOCWeMpwjwcjG1QJT7PN9V0kR8xIA/viewform" target="_blank" >📣 open call for workshops and presentations</a><a href="mailto:helloworld@basel.codes">🤟</a>'
-      //   $('#title-animation').lettering();
-    }
-  }, 70);
 
+    if (index >= selectedText.length) {
+      elmIndex++;
+      index = 0;
+    }
+
+    if (elmIndex >= TITLES.length) {
+      write = false;
+        clearInterval(SI);
+        sessionStorage.setItem('baselcodes', true);
+    }
+  }, 80); // was 70, slowed down a tad
 }
 
 window.onmousemove = (event) => {
