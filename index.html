@@ -11,8 +11,6 @@
     <script src="js/libraries/jquery.lettering-0.6.1.min.js"></script>
     <script src="js/libraries/p5.min.js"></script>
     <script src="js/libraries/p5.dom.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script> -->
     <script src="js/boid.js"></script>
 </head>
 
@@ -21,7 +19,7 @@
     <div id="title-animation"><p>basel.codes</p><a href="https://day.processing.org" target="_blank" >🎉 processing community day</a><p>📆 09.02.19</p><a href="http://www.hek.ch/" target="_blank" >🏛 @h3k</a><p>&&</p><a href="https://www.fhnw.ch/de/die-fhnw/hochschulen/hgk" target="_blank" >🏫 @hgk</a><p>basel, switzerland</p><a href="https://docs.google.com/forms/d/e/1FAIpQLScsw6eTpP0SagAixIytgZOCWeMpwjwcjG1QJT7PN9V0kR8xIA/viewform" target="_blank" >📣 open call for workshops and presentations</a><a href="mailto:helloworld@basel.codes">🤟</a></div>
     <div id="p5"></div>
 
-    <div id="imprint-title" onclick="showImprint()" onmouseover="showImprint()" onmouseout="hideImprint()">
+    <div id="imprint-title"">
         <p>Imprint</p>
     </div>
 
@@ -36,27 +34,6 @@
     </div>
 
     <script>
-        // const imprint_text = '<p>basel.codes is a collective of coders, artists and designers from basel currently consisting of Ted Davis, Max Frischknecht, Yann Martins, Philipp Möckli, Pedro Neves and Andrea Zaccuri.<br><br> We are interested in the creative potential of code and are open, and in solidarity with, people from every gender identity and expression, sexual orientation, race, ethnicity, language, neuro-type, size, ability, class, religion, culture, subculture, political opinion, age, skill level, occupation, and background.</p>';
-        // const imprint = '<p>Imprint</p>';
-        // // document.getElementById('imprint').onmouseover = (event, el)=>{
-        // //     console.log(el);
-        // // }
-        // function showImprint() {
-        //     // document.getElementById('imprint').style.display = 'block';
-        //     document.getElementById('imprint-title').innerHTML = imprint_text;
-        //     // document.getElementById('imprint').style.opacity = '1';
-        //     // document.getElementById('imprint-title').style.display = 'none';
-        //     // document.getElementById('imprint-title').style.opacity = '0';
-        //     // console.log(imprint);
-        // }
-        // function hideImprint() {
-        //     document.getElementById('imprint-title').innerHTML = imprint;
-        //     // document.getElementById('imprint').style.display = 'none';
-        //     // document.getElementById('imprint').style.opacity = '0';
-        //     // document.getElementById('imprint-title').style.display = 'block';
-        //     // document.getElementById('imprint-title').style.opacity = '1';
-
-        // }
         $('#imprint-title').hover(()=>{
             $('#footer').slideDown('slow');
         },()=>{
