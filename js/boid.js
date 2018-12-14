@@ -24,14 +24,14 @@ const emojis = [
 class Boid {
     constructor() {
         this.boid = random(emojis);
-        this.r = floor(random(15, 25));
+        this.r = floor(random(height / 20, height / 15));
         this.position = createVector(random(width), random(height));
         this.velocity = p5.Vector.random2D();
         this.velocity.setMag(random(2, 4));
         this.acceleration = createVector();
-        this.maxForce = 1;
-        this.maxSpeed = 4;
-        this.perceptionRadius = 50;
+        this.maxForce = 1.5;
+        this.maxSpeed = 7;
+        this.perceptionRadius = 25;
     }
 
     edges() {
@@ -68,7 +68,7 @@ class Boid {
     }
 
     separation(boids) {
-        this.perceptionRadius = 50;
+        // this.perceptionRadius = 50;
         let steering = createVector();
         let total = 0;
         for (let other of boids) {
@@ -90,7 +90,7 @@ class Boid {
     }
 
     cohesion(boids) {
-        this.perceptionRadius = 100;
+        // this.perceptionRadius = 100;
         let steering = createVector();
         let total = 0;
         for (let other of boids) {
@@ -134,12 +134,14 @@ class Boid {
         const d2 = dist(mouseX, mouseY, p2.x, p2.y);
         const d3 = dist(mouseX, mouseY, p3.x, p3.y);
 
-        const user_alig = constrain(map(d1, 0, height / 2, 0, .75), 0, 0.75);
-        const user_cohe = constrain(map(d2, 0, height / 2, 0, .75), 0, 0.75);
-        const user_sep = constrain(map(d3, 0, height / 2, 0, 2), 0, 2)
+        // const user_alig = constrain(map(d1, 0, height / 2, 0, .75), 0, 0.75);
+        const user_alig = map(mouseX, 0, width, 0, 2);
+        // const user_cohe = constrain(map(d2, 0, height / 2, 0, .75), 0, 0.75);
+        const user_cohe = map(mouseY, 0, height, 0, 0.3);
+        const user_sep = map(mouseY, 0, height, .5, 2);
         alignment.mult(user_alig);
-        cohesion.mult(user_cohe);
-        separation.mult(0.5);
+        // cohesion.mult(1.5);
+        separation.mult(user_sep);
 
         this.acceleration.add(alignment);
         this.acceleration.add(cohesion);

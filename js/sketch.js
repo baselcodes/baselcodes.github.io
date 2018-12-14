@@ -52,7 +52,7 @@ function setup() {
   cnv = createCanvas(innerWidth, innerHeight);
   cnv.parent('p5');
   textAlign(CENTER, CENTER)
-  for (let i = 0; i < 75; i++)personaggini.push(new Boid());
+  for (let i = 0; i < 50; i++)personaggini.push(new Boid());
 }
 
 function draw() {
