@@ -1,13 +1,13 @@
 //const NEW_LINE = '$'
-const TITLES = ['basel.codes', '🎉 processing community day', '📆 09.02.19', '🏛 @h3k','&&', '🏫 @hgk', 'basel, switzerland', '📣 open call for workshops and presentations', '🤟'];
+const TITLES = ['basel.codes', '🎉 processing community day', '📆 09.02.19', '🏛 @h3k', '&&', '🏫 @hgk', 'basel, switzerland', '📣 open call for workshops and presentations', '🤟'];
 
 let index = 0;
 let elmIndex = 0;
 let elms = document.getElementById('title-animation').children;
 
 // purge info on first load (but SEO saw it!)
-if(!sessionStorage.getItem('baselcodes')){
-  for(let i=0; i< elms.length; i++){
+if (!sessionStorage.getItem('baselcodes')) {
+  for (let i = 0; i < elms.length; i++) {
     elms[i].style.visibility = "hidden";
     elms[i].innerHTML = "";
   }
@@ -30,8 +30,8 @@ if(!sessionStorage.getItem('baselcodes')){
 
     if (elmIndex >= TITLES.length) {
       write = false;
-        clearInterval(SI);
-        sessionStorage.setItem('baselcodes', true);
+      clearInterval(SI);
+      sessionStorage.setItem('baselcodes', true);
     }
   }, 80); // was 70, slowed down a tad
 }
@@ -48,25 +48,26 @@ window.onmousemove = (event) => {
 
 let cnv;
 const personaggini = [];
-function setup(){
+function setup() {
   cnv = createCanvas(innerWidth, innerHeight);
   cnv.parent('p5');
   textAlign(CENTER, CENTER)
-  for(let i = 0; i< 40; i++)personaggini.push(new Personaggino());
+  for (let i = 0; i < 75; i++)personaggini.push(new Boid());
 }
 
-function draw(){
+function draw() {
   background(200);
-  for (const personaggino of personaggini) {
-    personaggino.update();
-    // personaggino.proximity(personaggini);
-    personaggino.show(personaggini);
+  for (const boid of personaggini) {
+    boid.edges();
+    boid.flock(personaggini);
+    boid.update();
+    boid.show();
   }
 }
 
-function windowResized(){
+function windowResized() {
   resizeCanvas(innerWidth, innerHeight);
 }
 
-window.onblur = function() { noLoop(); }
-window.onfocus = function() { loop(); }
+window.onblur = function () { noLoop(); }
+window.onfocus = function () { loop(); }
