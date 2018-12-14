@@ -47,19 +47,20 @@ window.onmousemove = (event) => {
 }
 
 let cnv;
-let balls = [];
+const personaggini = [];
 function setup(){
   cnv = createCanvas(innerWidth, innerHeight);
-  cnv.parent('p5')
-  for(let i = 0; i< 50; i++)balls.push(new Ball());
+  cnv.parent('p5');
+  textAlign(CENTER, CENTER)
+  for(let i = 0; i< 40; i++)personaggini.push(new Personaggino());
 }
 
 function draw(){
   background(200);
-  for (const ball of balls) {
-    ball.update();
-    // ball.proximity(balls);
-    ball.show(balls);
+  for (const personaggino of personaggini) {
+    personaggino.update();
+    // personaggino.proximity(personaggini);
+    personaggino.show(personaggini);
   }
 }
 
