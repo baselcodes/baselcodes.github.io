@@ -124,7 +124,7 @@ class Boid {
         const user_alig = map(mouseX, 0, width, 0, 2);
         // const user_cohe = constrain(map(d2, 0, height / 2, 0, .75), 0, 0.75);
         const user_cohe = map(mouseY, 0, height, 0, 0.3);
-        const user_sep = map(mouseY, 0, height, .5, 2);
+        const user_sep = map(mouseY, 0, height, 0.8, 2);
         alignment.mult(user_alig);
         // cohesion.mult(1.5);
         separation.mult(user_sep);
