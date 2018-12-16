@@ -53,21 +53,26 @@ function setup() {
   cnv = createCanvas(innerWidth, innerHeight);
   cnv.parent('p5');
   textAlign(CENTER, CENTER)
-  for (let i = 0; i < 50; i++)personaggini.push(new Boid());
+  let loopc = innerWidth/30;
+  for (let i = 0; i < loopc; i++)personaggini.push(new Boid(random(width), random(height)));
 }
 
 function draw() {
   background(200);
   for (const boid of personaggini) {
-    boid.edges();
-    boid.flock(personaggini);
     boid.update();
-    boid.show();
+    boid.proximity(personaggini);
+    boid.edges();
+    boid.show(personaggini);
   }
 }
 
 function windowResized() {
   resizeCanvas(innerWidth, innerHeight);
+}
+
+function mousePressed(){
+  personaggini.push(new Boid(mouseX, mouseY))
 }
 
 window.onblur = function () { noLoop(); }
