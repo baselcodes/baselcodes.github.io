@@ -5,10 +5,10 @@ class Boid {
     constructor(x, y) {
         this.boid = random(emojis);
         this.pos = createVector(x, y);
-        this.ppos = this.pos;
+        this.ppos = createVector(this.pos.x, this.pos.y);
         this.rvel = 1.5;
         this.vel = createVector(random(-this.rvel, this.rvel), random(-this.rvel, this.rvel));
-        this.r = random(10, 40);
+        this.r = random(15, 45);
         this.directionx = 1;
         this.directiony = 1;
         this.maxSpeed = 50;
@@ -47,11 +47,9 @@ class Boid {
     edges() {
             if (this.pos.x > width - (this.r / 2) || this.pos.x <  this.r / 2) {
                 this.directionx *= -1;
-                this.ppos = this.pos;
             }
             if (this.pos.y > height - (this.r / 2) || this.pos.y < this.r / 2) {
                 this.directiony *= -1;
-                this.ppos = this.pos;
             }
     }
     proximity(balls) {
