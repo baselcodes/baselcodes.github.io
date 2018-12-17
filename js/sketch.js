@@ -54,7 +54,8 @@ function setup() {
   cnv.parent('p5');
   textAlign(CENTER, CENTER)
   let loopc = innerWidth/30;
-  for (let i = 0; i < loopc; i++)personaggini.push(new Boid(random(width), random(height)));
+  let brdr = 20;
+  for (let i = 0; i < loopc; i++)personaggini.push(new Boid(random(brdr, width-brdr), random(brdr, height-brdr)));
 }
 
 function draw() {

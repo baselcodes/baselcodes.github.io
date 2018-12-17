@@ -39,21 +39,21 @@ class Boid {
     update() {
         this.pos.x += this.vel.x * this.directionx;
         this.pos.y += this.vel.y * this.directiony;
-        this.ppos = this.pos;
         // this.pos.limit(this.maxSpeed);
         // this.trail.push({x: this.pos.x, y: this.pos.y});
         // if(this.trail.length > 50)this.trail.splice(0, 1);
         // this.edges();
     }
     edges() {
-        if (this.pos.x > width - (this.r / 2) || this.pos.x <  this.r / 2) {
-            //this.x -= this.vel.x *4 * this.directionx;
-            this.directionx *= -1;
-
-        }
-        if (this.pos.y > height - (this.r / 2) || this.pos.y < this.r / 2) {
-            //this.pos.y -= this.vel.y *4 * this.directiony;
-            this.directiony *= -1;
+        if(this.pos.dist(this.ppos) > this.r){
+            if (this.pos.x > width - (this.r / 2) || this.pos.x <  this.r / 2) {
+                this.directionx *= -1;
+                this.ppos = this.pos;
+            }
+            if (this.pos.y > height - (this.r / 2) || this.pos.y < this.r / 2) {
+                this.directiony *= -1;
+                this.ppos = this.pos;
+            }
         }
     }
     proximity(balls) {
@@ -63,12 +63,15 @@ class Boid {
                     strokeWeight(2);
                     stroke(255);
                     line(ball.pos.x, ball.pos.y, this.pos.x, this.pos.y);
-                    const dir = p5.Vector.sub(this.pos, ball.pos);
-                    dir.normalize();
                     if(this.r < 60)
                         this.r += .1;
-                    if(this.pos.y < height - (this.r / 2) && this.pos.y > this.r / 2 && this.pos.x < width - (this.r / 2) && this.pos.x >  this.r / 2)
-                    this.pos.add(dir);
+                    const dir = p5.Vector.sub(this.pos, ball.pos);
+                    dir.normalize();
+                    if(this.pos.dist(this.ppos) > this.r){
+                        if(this.pos.y < height - (this.r / 2) && this.pos.y > this.r / 2 && this.pos.x < width - (this.r / 2) && this.pos.x >  this.r / 2)
+                        this.pos.add(dir);
+                        this.ppos = this.pos;
+                    }
                 }
             }
         }
