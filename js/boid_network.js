@@ -45,7 +45,6 @@ class Boid {
         // this.edges();
     }
     edges() {
-        if(this.pos.dist(this.ppos) > this.r){
             if (this.pos.x > width - (this.r / 2) || this.pos.x <  this.r / 2) {
                 this.directionx *= -1;
                 this.ppos = this.pos;
@@ -54,7 +53,6 @@ class Boid {
                 this.directiony *= -1;
                 this.ppos = this.pos;
             }
-        }
     }
     proximity(balls) {
         for (const ball of balls) {
@@ -67,11 +65,9 @@ class Boid {
                         this.r += .1;
                     const dir = p5.Vector.sub(this.pos, ball.pos);
                     dir.normalize();
-                    if(this.pos.dist(this.ppos) > this.r){
                         if(this.pos.y < height - (this.r / 2) && this.pos.y > this.r / 2 && this.pos.x < width - (this.r / 2) && this.pos.x >  this.r / 2)
                         this.pos.add(dir);
                         this.ppos = this.pos;
-                    }
                 }
             }
         }
