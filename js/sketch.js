@@ -1,5 +1,5 @@
 //const NEW_LINE = '$'
-const TITLES = ['basel.codes', 'processing community day', '09.02.19', '@h3k', '&&', '@hgk', 'basel, switzerland', 'open call for presentations and workshops', 'submission deadline 20.01.19', 'helloworld@basel.codes'];
+const TITLES = ['basel.codes', 'processing community day', '09.02.19', '@h3k', '&&', '@hgk', 'basel, switzerland', 'free talks + workshops + party!', 'register online', 'helloworld@basel.codes'];
 
 let index = 0;
 let elmIndex = 0;
