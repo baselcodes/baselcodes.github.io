@@ -28,6 +28,7 @@ $type-m: (
 
 $color-black: black;
 $color-primary: blue;
+$color-secondary: rgb(255, 0, 64);
 $color-surface: #F5F5F5;
 $color-white: #FFF;
 
@@ -72,6 +73,8 @@ body, h1, h2, h3, h4, h5, h6, li {
 
 #programm-title {
   background-color: black;
+  border-bottom: 1px solid $color-white;
+
   & h1 {
     padding-top: 15px; padding-bottom: 15px;
     color: white;
@@ -97,22 +100,6 @@ body, h1, h2, h3, h4, h5, h6, li {
   }
 }
 
-.accordion-blue {
-  background-color: blue;
-  border-bottom: 1px solid $color-white;
-  padding-top: 15px; padding-bottom: 15px;
-  cursor: pointer; 
-  user-select: none;
-
-  &:hover {
-    background-color: red;
-  }
-
-  & h2 {
-    color: white;
-  }
-}
-
 .accordion {
   background-color: $color-black;
   border-bottom: 1px solid $color-white;
@@ -121,7 +108,7 @@ body, h1, h2, h3, h4, h5, h6, li {
   user-select: none;
 
   &:hover {
-    background-color: red;
+    background-color:  $color-secondary;
   }
 
   & h3 {
@@ -130,7 +117,7 @@ body, h1, h2, h3, h4, h5, h6, li {
 }
 
 .active {
-  background-color: red;
+  background-color: $color-secondary;
 }
 
 .acc-panel {
@@ -149,6 +136,10 @@ body, h1, h2, h3, h4, h5, h6, li {
 
 #imprint {
   padding-top: 15px; padding-bottom: 15px;
+  background-color: $color-black;
+  & p {
+    color: $color-white;
+  }
 }
 
 /* Links & Buttons

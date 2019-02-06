@@ -42,6 +42,7 @@ body, h1, h2, h3, h4, h5, h6, li {
 
 #programm-title {
   background-color: black;
+  border-bottom: 1px solid #FFF;
 }
 
 #programm-title h1 {
@@ -73,26 +74,6 @@ body, h1, h2, h3, h4, h5, h6, li {
   line-height: 1.8rem;
 }
 
-.accordion-blue {
-  background-color: blue;
-  border-bottom: 1px solid #FFF;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
-.accordion-blue:hover {
-  background-color: red;
-}
-
-.accordion-blue h2 {
-  color: white;
-}
-
 .accordion {
   background-color: black;
   border-bottom: 1px solid #FFF;
@@ -106,7 +87,7 @@ body, h1, h2, h3, h4, h5, h6, li {
 }
 
 .accordion:hover {
-  background-color: red;
+  background-color: #ff0040;
 }
 
 .accordion h3 {
@@ -114,7 +95,7 @@ body, h1, h2, h3, h4, h5, h6, li {
 }
 
 .active {
-  background-color: red;
+  background-color: #ff0040;
 }
 
 .acc-panel {
@@ -137,6 +118,11 @@ body, h1, h2, h3, h4, h5, h6, li {
 #imprint {
   padding-top: 15px;
   padding-bottom: 15px;
+  background-color: black;
+}
+
+#imprint p {
+  color: #FFF;
 }
 
 /* Links & Buttons

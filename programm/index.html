@@ -48,47 +48,44 @@
     <!-- Talks Overview, each talk class an instance  
     _____________________________________________________________________________-->
     <!-- Talks Title -->
-    <div class="row accordion-blue">
+    <div class="row blue-panel">
       <div class="col-12">
         <h2>Talks <br> 10:00 – 12:00 </h2>
       </div>
     </div>
 
-    <div class="acc-panel">
-      <div class="acc-wrapper">
-          <div class="row talk">
-            <div class="col-6 col-md-3"><p>Céline Nauer & Corina Schedler</p></div>
-            <div class="col-6 col-md-9"><p>Women in Tech</p></div>
-          </div>
-          <div class="row talk">
-            <div class="col-6 col-md-3"><p>Max Frischknecht</p></div>
-            <div class="col-6 col-md-9"><p>Processing Poster Generators</p></div>
-          </div>
-          <div class="row talk">
-            <div class="col-6 col-md-3"><p>Andres Wanner</p></div>
-            <div class="col-6 col-md-9"><p>Chance or destiny?</p></div>
-          </div>
-          <div class="row talk">
-            <div class="col-6 col-md-3"><p>Ted Davis</p></div>
-            <div class="col-6 col-md-9"><p>XYScope</p></div>
-          </div>
-          <div class="row talk">
-            <div class="col-6 col-md-3"><p>Dominik Chapman</p></div>
-            <div class="col-6 col-md-9"><p>N-gon Waves - Audiovisual Applications of Regular Polygons</p></div>
-          </div>
-          <div class="row talk">
-            <div class="col-6 col-md-3"><p>Pedro Neves</p></div>
-            <div class="col-6 col-md-9"><p>Basil.js</p></div>
-          </div>
-          <div class="row talk">
-            <div class="col-6 col-md-3"><p>Andrea Zaccuri & Arianna Smaron</p></div>
-            <div class="col-6 col-md-9"><p>SPOGLIE</p></div>
-          </div>
-          <div class="row talk">
-            <div class="col-6 col-md-3"><p>Consuelo Keller</p></div>
-            <div class="col-6 col-md-9"><p>Designing 3D Printed Jewelry with Processing</p></div>
-          </div>
-      </div>     
+
+    <div class="row talk">
+      <div class="col-6 col-md-3"><p>Céline Nauer & Corina Schedler</p></div>
+      <div class="col-6 col-md-9"><p>Women in Tech</p></div>
+    </div>
+    <div class="row talk">
+      <div class="col-6 col-md-3"><p>Max Frischknecht</p></div>
+      <div class="col-6 col-md-9"><p>Processing Poster Generators</p></div>
+    </div>
+    <div class="row talk">
+      <div class="col-6 col-md-3"><p>Andres Wanner</p></div>
+      <div class="col-6 col-md-9"><p>Chance or destiny?</p></div>
+    </div>
+    <div class="row talk">
+      <div class="col-6 col-md-3"><p>Ted Davis</p></div>
+      <div class="col-6 col-md-9"><p>XYScope</p></div>
+    </div>
+    <div class="row talk">
+      <div class="col-6 col-md-3"><p>Dominik Chapman</p></div>
+      <div class="col-6 col-md-9"><p>N-gon Waves - Audiovisual Applications of Regular Polygons</p></div>
+    </div>
+    <div class="row talk">
+      <div class="col-6 col-md-3"><p>Pedro Neves</p></div>
+      <div class="col-6 col-md-9"><p>Basil.js</p></div>
+    </div>
+    <div class="row talk">
+      <div class="col-6 col-md-3"><p>Andrea Zaccuri & Arianna Smaron</p></div>
+      <div class="col-6 col-md-9"><p>SPOGLIE</p></div>
+    </div>
+    <div class="row talk">
+      <div class="col-6 col-md-3"><p>Consuelo Keller</p></div>
+      <div class="col-6 col-md-9"><p>Designing 3D Printed Jewelry with Processing</p></div>
     </div>
 
    
@@ -280,7 +277,7 @@
     <!-- Party -->
     <div class="row" id="imprint">
       <div class="col-12">
-        <p>The Processing Community Day Basel 2019 in organized in collaboration with the House of Electronic Arts Basel and The Basel School of Design.</p>
+        <p>The Processing Community Day Basel 2019 in organized by basel.codes in collaboration with the House of Electronic Arts Basel and The Basel School of Design.</p>
       </div>
     </div>
 
@@ -291,20 +288,6 @@
 
 <script>
   var acc = document.getElementsByClassName("accordion");
-  var i;
-  for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      var panel = this.nextElementSibling;
-      if (panel.style.maxHeight){
-        panel.style.maxHeight = null;
-      } else {
-        panel.style.maxHeight = panel.scrollHeight + "px";
-      }
-    });
-  }
-
-  var acc = document.getElementsByClassName("accordion-blue");
   var i;
   for (i = 0; i < acc.length; i++) {
     acc[i].addEventListener("click", function() {
