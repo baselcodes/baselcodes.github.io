@@ -10,7 +10,7 @@
 html {
   font-size: 62.5%;
   height: 100%;
-  background-color: #F5F5F5;
+  background-color: #ff0040;
 }
 
 body, h1, h2, h3, h4, h5, h6, li {
@@ -20,7 +20,7 @@ body, h1, h2, h3, h4, h5, h6, li {
   font-size: 2.4rem;
   letter-spacing: 0.5px;
   line-height: 2.6rem;
-  color: black;
+  color: #FFF;
   padding: 0px;
   margin: 0px;
   text-rendering: optimizeLegibility;
@@ -65,7 +65,7 @@ body, h1, h2, h3, h4, h5, h6, li {
 .talk {
   padding-top: 8px;
   padding-bottom: 8px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #FFF;
 }
 
 .talk p {
@@ -99,11 +99,14 @@ body, h1, h2, h3, h4, h5, h6, li {
 }
 
 .acc-panel {
-  background-color: #F5F5F5;
   max-height: 0;
   overflow: hidden;
   -webkit-transition: max-height 0.3s ease-out;
   transition: max-height 0.3s ease-out;
+}
+
+.acc-panel p {
+  color: #FFF;
 }
 
 .acc-panel .acc-wrapper {

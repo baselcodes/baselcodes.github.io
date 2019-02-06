@@ -39,7 +39,7 @@ $color-white: #FFF;
 html {
   font-size: 62.5%; 
   height: 100%;
-  background-color: $color-surface;
+  background-color: $color-secondary;
 
 }
 
@@ -51,7 +51,7 @@ body, h1, h2, h3, h4, h5, h6, li {
   font-size: map-get($type-l, size);
   letter-spacing: map-get($type-l, spacing);
 	line-height: map-get($type-l, line-height);
-  color: $color-black;
+  color: $color-white;
   padding: 0px; 
   margin: 0px;
   text-rendering: optimizeLegibility;
@@ -92,7 +92,7 @@ body, h1, h2, h3, h4, h5, h6, li {
 
 .talk {
   padding-top: 8px; padding-bottom: 8px;
-  border-bottom: 1px solid $color-black;
+  border-bottom: 1px solid $color-white;
   & p {
     font-size: map-get($type-m, size);
     letter-spacing: map-get($type-m, spacing);
@@ -121,10 +121,13 @@ body, h1, h2, h3, h4, h5, h6, li {
 }
 
 .acc-panel {
-  background-color: $color-surface;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-out;
+
+  & p {
+    color: $color-white;
+  }
 
   & .acc-wrapper {
     padding-top: 15px; padding-bottom: 15px;
