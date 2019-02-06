@@ -10,6 +10,7 @@
 html {
   font-size: 62.5%;
   height: 100%;
+  background-color: #F5F5F5;
 }
 
 body, h1, h2, h3, h4, h5, h6, li {
@@ -70,6 +71,26 @@ body, h1, h2, h3, h4, h5, h6, li {
   font-size: 1.4rem;
   letter-spacing: 0.4px;
   line-height: 1.8rem;
+}
+
+.accordion-blue {
+  background-color: blue;
+  border-bottom: 1px solid #FFF;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.accordion-blue:hover {
+  background-color: red;
+}
+
+.accordion-blue h2 {
+  color: white;
 }
 
 .accordion {
