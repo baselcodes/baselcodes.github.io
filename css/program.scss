@@ -125,10 +125,7 @@ body, h1, h2, h3, h4, h5, h6, li {
     background-color: $color-secondary;
   }
   &:hover {
-    background-color:  $color-primary;
-    & h3 {
-      color: $color-white !important;
-    }
+    background-color: darkgrey;
   }
 }
 
