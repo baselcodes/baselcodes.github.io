@@ -1,21 +1,20 @@
-//const NEW_LINE = '$'
-const TITLES = ['basel.codes', 'processing community day', 'full program here', '09.02.19', '@h3k', '&&', '@hgk', 'basel, switzerland', 'free talks + workshops + party!', 'register online', 'helloworld@basel.codes'];
-
 let index = 0;
 let elmIndex = 0;
 let elms = document.getElementById('title-animation').children;
+let contents = [];
 
 // purge info on first load (but SEO saw it!)
 if (!sessionStorage.getItem('baselcodes')) {
   for (let i = 0; i < elms.length; i++) {
     elms[i].style.visibility = "hidden";
+    contents.push(elms[i].innerHTML);
     elms[i].innerHTML = "";
   }
 
   write = true;
 
   SI = setInterval(() => {
-    selectedText = TITLES[elmIndex].split('');
+    selectedText = contents[elmIndex].split('');
     elms[elmIndex].style.visibility = "visible";
     if (write) {
       let letter = selectedText[index];
@@ -28,7 +27,7 @@ if (!sessionStorage.getItem('baselcodes')) {
       index = 0;
     }
 
-    if (elmIndex >= TITLES.length) {
+    if (elmIndex >= contents.length) {
       write = false;
       clearInterval(SI);
       sessionStorage.setItem('baselcodes', true);
