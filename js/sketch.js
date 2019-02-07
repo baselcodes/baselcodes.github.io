@@ -7,7 +7,11 @@ let contents = [];
 if (!sessionStorage.getItem('baselcodes')) {
   for (let i = 0; i < elms.length; i++) {
     elms[i].style.visibility = "hidden";
-    contents.push(elms[i].innerHTML);
+    let grabText = elms[i].innerHTML;
+    if(grabText == '&amp;&amp;'){
+      grabText = '&&';
+    }
+    contents.push(grabText);
     elms[i].innerHTML = "";
   }
 
