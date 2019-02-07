@@ -86,8 +86,8 @@ body, h1, h2, h3, h4, h5, h6, li {
 }
 
 .accordion {
-  background-color: black;
-  border-bottom: 1px solid #FFF;
+  background-color: #c8c8c8;
+  border-bottom: 1px solid black;
   padding-top: 15px;
   padding-bottom: 15px;
   cursor: pointer;
@@ -97,16 +97,20 @@ body, h1, h2, h3, h4, h5, h6, li {
           user-select: none;
 }
 
-.accordion:focus, .accordion:active {
-  background-color: black;
+.accordion h3 {
+  color: black !important;
 }
 
-.accordion:hover {
+.accordion:focus, .accordion:active {
   background-color: #c8c8c8;
 }
 
+.accordion:hover {
+  background-color: blue;
+}
+
 .accordion:hover h3 {
-  color: black !important;
+  color: #FFF !important;
 }
 
 .active {

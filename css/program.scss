@@ -112,19 +112,22 @@ body, h1, h2, h3, h4, h5, h6, li {
 }
 
 .accordion {
-  background-color: $color-black;
-  border-bottom: 1px solid $color-white;
+  background-color: $color-secondary;
+  border-bottom: 1px solid $color-black;
   padding-top: 15px; padding-bottom: 15px;
   cursor: pointer; 
   user-select: none;
+  & h3 {
+    color: $color-black !important;
+  }
 
   &:focus, &:active {
-    background-color: $color-black;
+    background-color: $color-secondary;
   }
   &:hover {
-    background-color:  $color-secondary;
+    background-color:  $color-primary;
     & h3 {
-      color: $color-black !important;
+      color: $color-white !important;
     }
   }
 }
