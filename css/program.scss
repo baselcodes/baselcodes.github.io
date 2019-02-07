@@ -28,7 +28,8 @@ $type-m: (
 
 $color-black: black;
 $color-primary: blue;
-$color-secondary: rgb(255, 0, 64);
+$color-secondary: rgb(200, 200, 200);
+// $color-secondary: rgb(255, 0, 64);
 $color-surface: #F5F5F5;
 $color-white: #FFF;
 
@@ -90,13 +91,23 @@ body, h1, h2, h3, h4, h5, h6, li {
   }
 }
 
+.info-text {
+  padding-top: 15px; padding-bottom: 15px;
+  border-bottom: 1px solid $color-black;
+
+  & p {
+    color: $color-black;
+  }
+}
+
 .talk {
   padding-top: 8px; padding-bottom: 8px;
-  border-bottom: 1px solid $color-white;
+  border-bottom: 1px solid $color-black;
   & p {
     font-size: map-get($type-m, size);
     letter-spacing: map-get($type-m, spacing);
     line-height: map-get($type-m, line-height);
+    color: $color-black;;
   }
 }
 
@@ -107,17 +118,23 @@ body, h1, h2, h3, h4, h5, h6, li {
   cursor: pointer; 
   user-select: none;
 
+  &:focus, &:active {
+    background-color: $color-black;
+  }
   &:hover {
     background-color:  $color-secondary;
-  }
-
-  & h3 {
-    color: $color-white !important;
+    & h3 {
+      color: $color-black !important;
+    }
   }
 }
 
 .active {
   background-color: $color-secondary;
+  border-bottom: 1px solid black;
+  & h3 {
+    color: $color-black !important;
+  }
 }
 
 .acc-panel {
@@ -126,7 +143,7 @@ body, h1, h2, h3, h4, h5, h6, li {
   transition: max-height 0.3s ease-out;
 
   & p {
-    color: $color-white;
+    color: $color-black;
   }
 
   & .acc-wrapper {

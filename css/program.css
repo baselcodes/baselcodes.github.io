@@ -10,7 +10,7 @@
 html {
   font-size: 62.5%;
   height: 100%;
-  background-color: #ff0040;
+  background-color: #c8c8c8;
 }
 
 body, h1, h2, h3, h4, h5, h6, li {
@@ -62,16 +62,27 @@ body, h1, h2, h3, h4, h5, h6, li {
   color: #FFF !important;
 }
 
+.info-text {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid black;
+}
+
+.info-text p {
+  color: black;
+}
+
 .talk {
   padding-top: 8px;
   padding-bottom: 8px;
-  border-bottom: 1px solid #FFF;
+  border-bottom: 1px solid black;
 }
 
 .talk p {
   font-size: 1.4rem;
   letter-spacing: 0.4px;
   line-height: 1.8rem;
+  color: black;
 }
 
 .accordion {
@@ -86,16 +97,25 @@ body, h1, h2, h3, h4, h5, h6, li {
           user-select: none;
 }
 
-.accordion:hover {
-  background-color: #ff0040;
+.accordion:focus, .accordion:active {
+  background-color: black;
 }
 
-.accordion h3 {
-  color: #FFF !important;
+.accordion:hover {
+  background-color: #c8c8c8;
+}
+
+.accordion:hover h3 {
+  color: black !important;
 }
 
 .active {
-  background-color: #ff0040;
+  background-color: #c8c8c8;
+  border-bottom: 1px solid black;
+}
+
+.active h3 {
+  color: black !important;
 }
 
 .acc-panel {
@@ -106,7 +126,7 @@ body, h1, h2, h3, h4, h5, h6, li {
 }
 
 .acc-panel p {
-  color: #FFF;
+  color: black;
 }
 
 .acc-panel .acc-wrapper {
@@ -160,4 +180,4 @@ ul, li {
 
 /* Breakpoints
 –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
-/*# sourceMappingURL=programm.css.map */
+/*# sourceMappingURL=program.css.map */
