@@ -8,8 +8,6 @@ function setup() {
 function draw() {
     background('#eee')
     bball.update();
-    bball.nudge();
-    bball.edge();
     bball.show();
 }
 
@@ -20,12 +18,16 @@ function windowResized() {
 class Bounce_Ball {
     constructor() {
         this.pos = createVector(random(width), random(height));
-        this.vel = createVector(random(2), random(2));
-        this.r = 75;
+        this.speed = 0.2;
+        this.vel = createVector(random(-this.speed, this.speed), random(-this.speed, this.speed));
+        this.r = 175;
     }
 
     update() {
+        this.edge();
+        this.nudge();
         this.pos.add(this.vel);
+        // this.pos.normalize();
         // this.pos.limit(3);
     }
     edge() {
