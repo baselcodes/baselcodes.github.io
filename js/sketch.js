@@ -20,13 +20,11 @@ if (selectedText != '') {
       write = false;
       setTimeout(() => {
         clearInterval(SI);
-      }, 2000);
+      }, 200);
       myDiv.innerHTML = '<p>basel.codes</p><p>📆 09.02.19</p><a href="http://www.hek.ch/" target="_blank" rel="noopener noreferrer">🏛 @h3k</a><p>&&</p><a href="https://www.fhnw.ch/de/die-fhnw/hochschulen/hgk" target="_blank" rel="noopener noreferrer">🏫 @hgk</a><a href="https://docs.google.com/forms/d/e/1FAIpQLScsw6eTpP0SagAixIytgZOCWeMpwjwcjG1QJT7PN9V0kR8xIA/viewform" target="_blank" rel="noopener noreferrer">📣 open call for workshops and presentations</a><a href="mailto:helloworld@basel.codes">🤟</a>'
       //   $('#title-animation').lettering();
-
-      
     }
-  }, 100);
+  }, 10);
 
 }
 
@@ -46,8 +44,7 @@ let balls = [];
 function setup() {
   cnv = createCanvas(innerWidth, innerHeight);
   cnv.parent('p5')
-  for (let i = 0; i < 1; i++)balls.push(new Ball());
-  frameRate(3);
+  for (let i = 0; i < 5; i++)balls.push(new Ball());
 }
 
 function draw() {
