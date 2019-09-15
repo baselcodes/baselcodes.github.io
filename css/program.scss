@@ -1,0 +1,206 @@
+/* Font Face
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+
+/* Variables
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+$breakpoint: 838px;
+$typeface: 'Roboto Mono';
+
+$type-l: (
+  font: ($typeface, monospace),
+  weight: (400),
+  transform: (none),
+  size: (2.4rem),
+  spacing: (0.5px),
+  line-height: (2.6rem)
+);
+
+$type-m: (
+  font: ($typeface, monospace),
+  weight: (400),
+  transform: (none),
+  size: (1.4rem),
+  spacing: (0.4px),
+  line-height: (1.8rem)
+);
+
+$color-black: black;
+$color-primary: blue;
+$color-secondary: rgb(200, 200, 200);
+// $color-secondary: rgb(255, 0, 64);
+$color-surface: #F5F5F5;
+$color-white: #FFF;
+
+/* HTML & BODY
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+/*  html is set to 62.5%  –– REM based on 10px –– 1.5rem = 15px */
+
+html {
+  font-size: 62.5%; 
+  height: 100%;
+  background-color: $color-secondary;
+
+}
+
+
+body, h1, h2, h3, h4, h5, h6, li {
+	font-family: map-get($type-l, font);
+  font-weight: map-get($type-l, weight);
+  text-transform: map-get($type-l, transform);
+  font-size: map-get($type-l, size);
+  letter-spacing: map-get($type-l, spacing);
+	line-height: map-get($type-l, line-height);
+  color: $color-white;
+  padding: 0px; 
+  margin: 0px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  word-break: break-word;
+}
+
+
+.type-m, p {
+	font-family: map-get($type-m, font);
+  font-weight: map-get($type-m, weight);
+  text-transform: map-get($type-m, transform);
+  font-size: map-get($type-m, size);
+  letter-spacing: map-get($type-m, spacing);
+  line-height: map-get($type-m, line-height);
+  padding: 0px; margin: 0px;
+}
+
+#programm-title {
+  background-color: black;
+  border-bottom: 1px solid $color-white;
+
+  & h1 {
+    padding-top: 15px; padding-bottom: 15px;
+    color: white;
+  }
+}
+
+.blue-panel {
+  background-color: $color-primary;
+  border-bottom: 1px solid $color-white;
+  padding-top: 15px; padding-bottom: 15px;
+  & h2 {
+    color: $color-white !important;
+  }
+}
+
+.info-text {
+  padding-top: 15px; padding-bottom: 15px;
+  border-bottom: 1px solid $color-black;
+
+  & p {
+    color: $color-black;
+  }
+}
+
+.talk {
+  padding-top: 8px; padding-bottom: 8px;
+  border-bottom: 1px solid $color-black;
+  & p {
+    font-size: map-get($type-m, size);
+    letter-spacing: map-get($type-m, spacing);
+    line-height: map-get($type-m, line-height);
+    color: $color-black;;
+  }
+}
+
+.accordion {
+  background-color: $color-secondary;
+  border-bottom: 1px solid $color-black;
+  padding-top: 15px; padding-bottom: 15px;
+  cursor: pointer; 
+  user-select: none;
+  & h3 {
+    color: $color-black !important;
+  }
+
+  &:focus, &:active {
+    background-color: $color-secondary;
+  }
+  &:hover {
+    background-color: darkgrey;
+  }
+}
+
+.active {
+  background-color: $color-secondary;
+  border-bottom: 1px solid black;
+  & h3 {
+    color: $color-black !important;
+  }
+}
+
+.acc-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+
+  & p {
+    color: $color-black;
+  }
+
+  & .acc-wrapper {
+    padding-top: 15px; padding-bottom: 15px;
+  }
+  & .workshop-text {
+    padding-top: 15px;
+  }
+}
+
+#imprint {
+  padding-top: 15px; padding-bottom: 15px;
+  background-color: $color-black;
+  & p {
+    color: $color-white;
+  }
+}
+
+/* Links & Buttons
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+a {
+	color: $color-primary; 
+  text-decoration: none;
+  transition: 0.3s;
+
+	&:hover {
+    color: $color-black;
+    transition: 0.3s;
+	}
+}
+
+/* Images
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.img-fluid{
+	width: 100%;
+}
+
+
+/* Lists
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+ul, li{
+	margin: 0px;
+  padding: 0px;
+  list-style: none;
+  line-height: 0;
+}
+
+/* Breakpoints
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {}

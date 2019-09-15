@@ -1,0 +1,183 @@
+@charset "UTF-8";
+/* Font Face
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
+/* Variables
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* HTML & BODY
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+/*  html is set to 62.5%  –– REM based on 10px –– 1.5rem = 15px */
+html {
+  font-size: 62.5%;
+  height: 100%;
+  background-color: #c8c8c8;
+}
+
+body, h1, h2, h3, h4, h5, h6, li {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 2.4rem;
+  letter-spacing: 0.5px;
+  line-height: 2.6rem;
+  color: #FFF;
+  padding: 0px;
+  margin: 0px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  word-break: break-word;
+}
+
+.type-m, p {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 1.4rem;
+  letter-spacing: 0.4px;
+  line-height: 1.8rem;
+  padding: 0px;
+  margin: 0px;
+}
+
+#programm-title {
+  background-color: black;
+  border-bottom: 1px solid #FFF;
+}
+
+#programm-title h1 {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: white;
+}
+
+.blue-panel {
+  background-color: blue;
+  border-bottom: 1px solid #FFF;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.blue-panel h2 {
+  color: #FFF !important;
+}
+
+.info-text {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid black;
+}
+
+.info-text p {
+  color: black;
+}
+
+.talk {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid black;
+}
+
+.talk p {
+  font-size: 1.4rem;
+  letter-spacing: 0.4px;
+  line-height: 1.8rem;
+  color: black;
+}
+
+.accordion {
+  background-color: #c8c8c8;
+  border-bottom: 1px solid black;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.accordion h3 {
+  color: black !important;
+}
+
+.accordion:focus, .accordion:active {
+  background-color: #c8c8c8;
+}
+
+.accordion:hover {
+  background-color: darkgrey;
+}
+
+.active {
+  background-color: #c8c8c8;
+  border-bottom: 1px solid black;
+}
+
+.active h3 {
+  color: black !important;
+}
+
+.acc-panel {
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.3s ease-out;
+  transition: max-height 0.3s ease-out;
+}
+
+.acc-panel p {
+  color: black;
+}
+
+.acc-panel .acc-wrapper {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.acc-panel .workshop-text {
+  padding-top: 15px;
+}
+
+#imprint {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: black;
+}
+
+#imprint p {
+  color: #FFF;
+}
+
+/* Links & Buttons
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+a {
+  color: blue;
+  text-decoration: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: black;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+/* Images
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.img-fluid {
+  width: 100%;
+}
+
+/* Lists
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+ul, li {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  line-height: 0;
+}
+
+/* Breakpoints
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+/*# sourceMappingURL=program.css.map */

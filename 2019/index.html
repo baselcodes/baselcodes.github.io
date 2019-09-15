@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="origin-when-cross-origin" />
+
+    <title>basel.codes</title>
+    <meta name="description" content="Basel Codes is a collective of coders 👾👩‍💻👨‍💻, artists 👨‍🎨👩‍🎨 and designers 🧞‍♂️🧞‍♀️. We are interested in the 🌈 creative 🌈 potential of code.">
+    <meta name="author" content="Basel Codes Community">
+
+    <!-- Facebook -->
+    <meta property="og:url" content="http://basel.codes">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="basel.codes // processing community day // 09.02.19">
+    <meta property="og:description" content="As part of Processing Community Day (PCD) the FHNW Academy of Art and Design and HeK will host a full day of workshops and talks. Several guests will offer insights into their work with Processing and share their knowledge about topics such as p5.js, basil.js, XYscope and the original Processing environment. In the evening, the projects developed during the workshops will be presented and discussed. The presentations are followed by a party with  DJs and live coding sets.">
+    <meta property="og:image" content="https://basel.codes/og.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="basel.codes">
+    <meta name="twitter:creator" content="basel.codes">
+    <meta name="twitter:title" content="basel.codes // processing community day // 09.02.19">
+    <meta name="twitter:description" content="Basel Codes is a collective of coders, artists and designers. We are interested in the creative potential of code.">
+    <meta name="twitter:image" content="https://basel.codes/og.png">
+    
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css">
+    <script src="../js/libraries/jquery-3.3.1.min.js"></script>
+    <script src="../js/libraries/jquery.lettering-0.6.1.min.js"></script>
+    <script src="../js/libraries/p5.min.js"></script>
+    <script src="../js/libraries/p5.dom.min.js"></script>
+    <script src="js/boid_network.js"></script>
+
+    <link rel="icon" type="image/png" href="favicon-196x196.png" sizes="196x196" />
+</head>
+
+<body>
+    <div class="container"></div>
+    <div id="title-animation"><p>basel.codes</p><a href="https://day.processing.org" target="_blank" >processing community day</a><a href="program/index.html">full program here</a><p>09.02.19</p><a href="http://www.hek.ch/" target="_blank" >@h3k</a><p>&&</p><a href="https://www.fhnw.ch/de/die-fhnw/hochschulen/hgk" target="_blank" >@hgk</a><p>basel, switzerland</p><p>free talks + workshops + party!</p><a href="http://www.hek.ch/en/program/events-en/event/processingcommunityday.html" target="_blank" >register online</a><a href="mailto:helloworld@basel.codes">helloworld@basel.codes</a></div>
+    <div id="p5"></div>
+
+    <div id="imprint-title"">
+        <p>About</p>
+    </div>
+
+    <div id="footer">
+        <p id="imprint">
+            basel.codes is a collective of coders, artists and designers from basel currently consisting of Ted Davis,
+            Max&nbsp;Frischknecht, Mark&nbsp;Iandovka, Yann&nbsp;Martins, Philipp&nbsp;Möckli, Naz&nbsp;Naddaf, Pedro&nbsp;Neves, Haejeung&nbsp;Paik and Andrea&nbsp;Zaccuri.<br><br>
+            We are interested in the creative potential of code and are open, and in solidarity with, people from every
+            gender identity and expression, sexual orientation, race, ethnicity, language, neuro-type, size, ability,
+            class, religion, culture, subculture, political opinion, age, skill level, occupation, and background.
+        </p>
+    </div>
+
+    <script>
+        $('#imprint-title').hover(()=>{
+            $('#footer').slideDown('slow');
+        },()=>{
+            $('#footer').slideUp('slow');
+        })
+        $('#imprint-title').click(()=>{
+            $('#footer').slideDown('slow');
+        })
+        $(document).click(()=>{
+            $('#footer').slideUp('slow');
+        })
+    </script>
+    <script src="js/sketch.js"></script>
+
+</body>
+
+</html>
