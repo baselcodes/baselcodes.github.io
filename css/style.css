@@ -111,6 +111,17 @@ p#imprint {
 }
 .log{
     grid-area: log;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.log a{
+    color: #00f;
+    text-decoration: none;
+}
+
+.log a:hover{
+    color: #f00;
+    text-decoration: underline;
 }
 
 .intro {
@@ -158,7 +169,15 @@ p#imprint {
     transform: skewY(-10deg);
 }
 
-@media (max-width: 768px) {§
+.center-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+@media (max-width: 768px) {
     p#imprint {
         width: 75%;
     }
