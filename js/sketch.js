@@ -146,4 +146,4 @@ function resolve_collision_2(a, b) {
       fill(this.col);
       ellipse(this.pos.x, this.pos.y, this.r);
     }
-  }
+}
