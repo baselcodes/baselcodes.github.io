@@ -2,20 +2,20 @@
 
 ## SASS/SCSS
 
-I suggest we use scss for the design of the website. Learn the basics (here)[https://webdesign.tutsplus.com/courses/14-days-to-learn-sass/lessons/install-method-1-the-command-line] or (here)[https://medium.com/web-development-articles/scss-basics-279ce9c0acb8].
+I suggest we use scss for the design of the website. Learn the basics [here](https://webdesign.tutsplus.com/courses/14-days-to-learn-sass/lessons/install-method-1-the-command-line) or [here](https://medium.com/web-development-articles/scss-basics-279ce9c0acb8).
 
-You also need a compiler to generate `css` files from `scss` files. You can either use (CLI)[https://sass-lang.com/install] for that or, if you work with Visual Studio Live Sass Compiler
+You need a compiler to generate `css` from `scss` files. You can either use [CLI](https://sass-lang.com/install) for that or, if you work with Visual Studio, the `Live Sass Compiler`plugin
 by ritwickdey.
 
 ### SASS/SCSS Folder Structure
 
-The idea behind scss is to seperate the css into different files for a clearer structure and better co-working. Partial files always start with a underscrore `_colors.scss` .The `master.scss` imports all these files and creates the master scss.
+The idea behind scss is to seperate the css into different files for a clearer structure and better co-working. Partial files always start with a underscrore (e.g. `_colors.scss`) .The `master.scss` imports all these files and creates the main css.
 
 ```
 2020
-│   index.html //the file shown by the browser
+│   index.html
 │
-└─── assets //the files required by the website
+└─── assets // folder for css, js, fonts, whatsoever
      │  
      │
      └─── css
