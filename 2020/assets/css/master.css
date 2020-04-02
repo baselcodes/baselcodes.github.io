@@ -7,7 +7,7 @@
 –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
 @font-face {
   font-family: 'Lab-Mono';
-  src: url("assets/fonts/labmono-regular-web.eot"), url("assets/fonts/labmono-regular-web.eot") format("embedded-opentype"), url("assets/fonts/labmono-regular-web.woff2") format("woff2"), url("assets/fonts/labmono-regular-web.woff") format("woff"), url("assets/fonts/labmono-regular-web.ttf") format("truetype");
+  src: url("https://basel.codes/2020/assets/fonts/labmono-regular-web.eot"), url("https://basel.codes/2020/assets/fonts/labmono-regular-web.eot") format("embedded-opentype"), url("https://basel.codes/2020/assets/fonts/labmono-regular-web.woff2") format("woff2"), url("https://basel.codes/2020/assets/fonts/labmono-regular-web.woff") format("woff"), url("https://basel.codes/2020/assets/fonts/labmono-regular-web.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -72,15 +72,6 @@ html {
 –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
 .img-fluid {
   width: 100%;
-}
-
-.img-fluid.rawimg.portrait {
-  width: 66.6%;
-}
-
-.img-fullwidth {
-  padding-left: 0;
-  padding-right: 0;
 }
 
 img {
