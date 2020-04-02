@@ -1,0 +1,89 @@
+/* Font Face
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+@font-face {
+  font-family: 'Lab-Mono';
+    src: url('../fonts/labmono-regular-web.eot'),
+        url('../fonts/labmono-regular-web.eot'),
+         url('../fonts/labmono-regular-web.eot') format('embedded-opentype'),
+         url('../fonts/labmono-regular-web.woff2') format('woff2'),
+         url('../fonts/labmono-regular-web.woff') format('woff'),
+         url('../fonts/labmono-regular-web.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  }
+
+/* Variables
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+$mono: 'Lab-Mono';
+
+$mono-mobile-m: (
+  font: ($mono, serif),
+  weight: (400),
+  transform: (none),
+  size: (2.4rem),
+  spacing: (0px),
+  line-height: (1.1)
+);
+
+$mono-desktop-m: (
+  font: ($mono, serif),
+  weight: (400),
+  transform: (none),
+  size: (2.4rem),
+  spacing: (0px),
+  line-height: (1.1)
+);
+
+/* Mobile Sizing
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+// base classe for everything
+body, h1, h2, h3, h4, h5, h6, p, li {
+	font-family: map-get($mono-mobile-m, font);
+  font-weight: map-get($mono-mobile-m, weight);
+  text-transform: map-get($mono-mobile-m, transform);
+  font-size: map-get($mono-mobile-m, size);
+  letter-spacing: map-get($mono-mobile-m, spacing);
+	line-height: map-get($mono-mobile-m, line-height);
+  color: $color-black;
+  padding: 0px; 
+  margin: 0px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  word-break: break-word;
+}
+// create a class for each font different from the base class
+// e.g. dia-small, dia-medium, dia-large, times-small, times-medium, times-large
+// or mono-small, ..., serif-small, ...
+
+/* Desktop Sizing
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media (min-width: 768px) {
+  // copy + past the classes from above here, modify the fonts
+}
+
+/* General Font Settings
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+// create spacing between richtext p's
+.richtext-linebreaks p {
+  margin-bottom: 30px;
+  &:last-of-type {
+    margin-bottom: 0px;
+  }
+}
+
+::-moz-selection { /* Code for Firefox */
+  color: $color-text-selection;
+  background-color: $color-text-selection-background;
+  // background-color: rgba(255, 0, 0, 0.99);
+}
+::selection {
+  color: $color-text-selection;
+  background-color: $color-text-selection-background;
+  // background-color: rgba(255, 0, 0, 0.99);
+}
+::-webkit-selection {
+  color: $color-text-selection;
+  background-color: $color-text-selection-background;
+  // background-color: rgba(255, 0, 0, 0.99);
+}

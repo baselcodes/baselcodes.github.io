@@ -1,0 +1,78 @@
+/* HTML & BODY
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+/*  html is set to 62.5%  –– REM based on 10px –– 1.5rem = 15px */
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+
+/* Images
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.img-fluid {
+  width: 100%;
+}
+
+img {
+  display: block;
+  border: none;
+}
+
+/* Links & Buttons
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+a {
+  color: $color-black;
+  text-decoration: none;
+  transition: 0.3s;
+
+  &:visited {
+    color: $color-black;
+    transition: 0.3s;
+    text-decoration: none;
+  }
+  &:hover {
+    color: $color-black;
+    transition: 0.3s;
+    text-decoration: none;
+  }
+}
+
+button {
+  border: none;
+  color: $color-black;
+  background: $color-surface;
+  box-shadow: 0 0 6px 1px #BABABA;
+  border-radius: 2rem;
+  padding: 1rem;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  transition: 0.3s;
+  cursor: pointer;
+
+  &:hover, &.active:hover {
+    transition: 0.3s;
+    color: $color-black;
+    background: $color-primary;
+  }
+  &.active {
+    transition: 0.3s;
+    color: $color-black;
+    background: $color-secondary;
+  }
+}
+
+/* Lists
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+ul, li {
+  margin: 0px;
+  padding: 0px;
+  list-style: none; // or circle
+  line-height: 0;
+}
+
+ol {
+  padding: 0px;
+  margin: 0px;
+  margin-left: 2.2rem;
+}
+

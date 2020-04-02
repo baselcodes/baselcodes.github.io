@@ -1,0 +1,157 @@
+@charset "UTF-8";
+#content {
+  padding-top: 1.5rem;
+}
+
+/* Font Face
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+@font-face {
+  font-family: 'Lab-Mono';
+  src: url("assets/fonts/labmono-regular-web.eot"), url("assets/fonts/labmono-regular-web.eot") format("embedded-opentype"), url("assets/fonts/labmono-regular-web.woff2") format("woff2"), url("assets/fonts/labmono-regular-web.woff") format("woff"), url("assets/fonts/labmono-regular-web.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Variables
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* Mobile Sizing
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+body, h1, h2, h3, h4, h5, h6, p, li {
+  font-family: "Lab-Mono", serif;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 2.4rem;
+  letter-spacing: 0px;
+  line-height: 1.1;
+  color: black;
+  padding: 0px;
+  margin: 0px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  word-break: break-word;
+}
+
+/* Desktop Sizing
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* General Font Settings
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.richtext-linebreaks p {
+  margin-bottom: 30px;
+}
+
+.richtext-linebreaks p:last-of-type {
+  margin-bottom: 0px;
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: black;
+  background-color: #ffe818;
+}
+
+::selection {
+  color: black;
+  background-color: #ffe818;
+}
+
+::-webkit-selection {
+  color: black;
+  background-color: #ffe818;
+}
+
+/* HTML & BODY
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+/*  html is set to 62.5%  –– REM based on 10px –– 1.5rem = 15px */
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+/* Images
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.img-fluid {
+  width: 100%;
+}
+
+.img-fluid.rawimg.portrait {
+  width: 66.6%;
+}
+
+.img-fullwidth {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+img {
+  display: block;
+  border: none;
+}
+
+/* Links & Buttons
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+a {
+  color: black;
+  text-decoration: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+a:visited {
+  color: black;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  color: black;
+  background: #F5F5F5;
+  -webkit-box-shadow: 0 0 6px 1px #BABABA;
+          box-shadow: 0 0 6px 1px #BABABA;
+  border-radius: 2rem;
+  padding: 1rem;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+button:hover, button.active:hover {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  color: black;
+  background: #0b38ff;
+}
+
+button.active {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  color: black;
+  background: #fd2f63;
+}
+
+/* Lists
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+ul, li {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  line-height: 0;
+}
+
+ol {
+  padding: 0px;
+  margin: 0px;
+  margin-left: 2.2rem;
+}
+/*# sourceMappingURL=master.css.map */
