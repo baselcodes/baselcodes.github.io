@@ -1,8 +1,4 @@
 @charset "UTF-8";
-#content {
-  padding-top: 1.5rem;
-}
-
 /* Font Face
 –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
 @font-face {
@@ -23,13 +19,22 @@ body, h1, h2, h3, h4, h5, h6, p, li {
   font-size: 2.4rem;
   letter-spacing: 0px;
   line-height: 1.1;
-  color: black;
+  color: #FFF;
   padding: 0px;
   margin: 0px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   word-break: break-word;
+}
+
+.mono-xl {
+  font-family: "Lab-Mono", serif;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 3.2rem;
+  letter-spacing: 0px;
+  line-height: 1.1;
 }
 
 /* Desktop Sizing
@@ -60,12 +65,21 @@ body, h1, h2, h3, h4, h5, h6, p, li {
   background-color: #ffe818;
 }
 
+.bottom-space-xl {
+  padding-bottom: 4.8rem;
+}
+
 /* HTML & BODY
 –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
 /*  html is set to 62.5%  –– REM based on 10px –– 1.5rem = 15px */
 html {
   font-size: 62.5%;
   height: 100%;
+  background: #212121;
+}
+
+#content {
+  padding-top: 1.5rem;
 }
 
 /* Images

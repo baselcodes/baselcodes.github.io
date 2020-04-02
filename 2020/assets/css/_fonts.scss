@@ -24,6 +24,15 @@ $mono-mobile-m: (
   line-height: (1.1)
 );
 
+$mono-mobile-xl: (
+  font: ($mono, serif),
+  weight: (400),
+  transform: (none),
+  size: (3.2rem),
+  spacing: (0px),
+  line-height: (1.1)
+);
+
 $mono-desktop-m: (
   font: ($mono, serif),
   weight: (400),
@@ -43,7 +52,7 @@ body, h1, h2, h3, h4, h5, h6, p, li {
   font-size: map-get($mono-mobile-m, size);
   letter-spacing: map-get($mono-mobile-m, spacing);
 	line-height: map-get($mono-mobile-m, line-height);
-  color: $color-black;
+  color: $color-white;
   padding: 0px; 
   margin: 0px;
   text-rendering: optimizeLegibility;
@@ -54,6 +63,15 @@ body, h1, h2, h3, h4, h5, h6, p, li {
 // create a class for each font different from the base class
 // e.g. dia-small, dia-medium, dia-large, times-small, times-medium, times-large
 // or mono-small, ..., serif-small, ...
+
+.mono-xl {
+  font-family: map-get($mono-mobile-xl, font);
+  font-weight: map-get($mono-mobile-xl, weight);
+  text-transform: map-get($mono-mobile-xl, transform);
+  font-size: map-get($mono-mobile-xl, size);
+  letter-spacing: map-get($mono-mobile-xl, spacing);
+	line-height: map-get($mono-mobile-xl, line-height);
+}
 
 /* Desktop Sizing
 –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
