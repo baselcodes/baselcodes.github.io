@@ -1,0 +1,30 @@
+@font-face{
+  font-family: 'pixel';
+  src: url('assets/fonts/PxPlus_VGA_SquarePx.ttf');
+  src: url('assets/fonts/PxPlus_VGA_SquarePx.woff');
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.main{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  mix-blend-mode: exclusion;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.big-text{
+  text-align: center;
+  font-size: 4rem;
+  color: aqua;
+  font-family: 'pixel', Courier, monospace;
+}
