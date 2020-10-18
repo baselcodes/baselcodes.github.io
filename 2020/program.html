@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎫 PROGRAM!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main" style="border: solid 3px #3f3;">
+        <p class="small-text">
+            <span style="color: #3f3;">10-12</span> p5.js <span
+                style="color: blueviolet;">workshop</span></p>
+        <p class="small-text">
+            <span style="color: #3f3;">12-13</span> lunch</p>
+        <p class="small-text">
+            <span style="color: #3f3;">13-15</span> shader <span style="color: blueviolet;">workshop</span></p>
+        <p class="small-text">
+            <span style="color: #3f3;">15-17</span> terminal && twitter <span
+                style="color: blueviolet;">workshop</span></p>
+        <p class="small-text">
+            <span style="color: #3f3;">20</span> opening Neues kino</p>
+        <p class="small-text">
+            <span style="color: #3f3;">21</span> movie</p>
+        </p>
+    </div>
+    <div class="help-text">
+        HELP!
+    </div>
+    <script>
+        let x = 0
+        let y = 0
+        const help = document.querySelector('.help-text')
+        window.onmousemove = e => {
+            x = e.clientX
+            y = e.clientY
+            help.style.top = y + 'px'
+            help.style.left = x + 'px'
+        }
+    </script>
+</body>
+
+</html>
