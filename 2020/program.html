@@ -10,21 +10,19 @@
 
 <body>
     <div class="main" style="border: solid 3px #3f3;">
-        <p class="small-text">
-            <span style="color: #3f3;">10-12</span> p5.js <span
-                style="color: blueviolet;">workshop</span></p>
-        <p class="small-text">
+        <p class="small-text" data-caption="Basic introduction to p5.js with Ted Davis and Mark Lando">
+            <span style="color: #3f3;">10-12</span> p5.js <span style="color: blueviolet;">workshop</span></p>
+        <p class="small-text" data-caption="Basic food intake based on wheat products">
             <span style="color: #3f3;">12-13</span> lunch</p>
-        <p class="small-text">
+        <p class="small-text" data-caption="Basic shaders GLSL workshop with LEna Frei and Alain Brusch(???)">
             <span style="color: #3f3;">13-15</span> shader <span style="color: blueviolet;">workshop</span></p>
-        <p class="small-text">
-            <span style="color: #3f3;">15-17</span> terminal && twitter <span
-                style="color: blueviolet;">workshop</span></p>
-        <p class="small-text">
-            <span style="color: #3f3;">20</span> opening Neues kino</p>
-        <p class="small-text">
-            <span style="color: #3f3;">21</span> movie</p>
+        <p class="small-text" data-caption="Basic terminal commands and twitter API">
+            <span style="color: #3f3;">15-17</span> terminal && twitter <span style="color: blueviolet;">workshop</span>
         </p>
+        <p class="small-text" data-caption="Basic bar || POSTPONED!!!!">
+            <span style="color: #3f3;">20</span> opening Neues kino</p>
+        <p class="small-text" data-caption="Basic complex movie about surveillance || POSTPONED!!!!">
+            <span style="color: #3f3;">21</span> movie</p>
     </div>
     <div class="help-text">
         HELP!
@@ -32,12 +30,22 @@
     <script>
         let x = 0
         let y = 0
+        let show = false
         const help = document.querySelector('.help-text')
         window.onmousemove = e => {
             x = e.clientX
             y = e.clientY
-            help.style.top = y + 'px'
-            help.style.left = x + 'px'
+            help.style.top = y - 50 + 'px'
+            help.style.left = x + 20 + 'px'
+        }
+
+        const paragraphs = document.querySelectorAll('p.small-text')
+        for (const p of paragraphs) {
+            p.addEventListener('mouseover', e => {
+                help.style.display = 'block'
+                help.textContent = p.dataset.caption
+            })
+            p.addEventListener('mouseleave', e => help.style.display = 'none')
         }
     </script>
 </body>

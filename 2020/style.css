@@ -43,6 +43,12 @@
   .help-text{
       display: none;
       position: fixed;
-      color: aqua;
+      max-width: 200px;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      color: #3f3;
+      background-color: black;
       border: solid 3px white;
+      padding: 0.5rem;
+      box-shadow: #3f3 5px 5px 5px;
+      /* mix-blend-mode: exclusion; */
   }
