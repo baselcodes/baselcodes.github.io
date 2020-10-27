@@ -1,54 +1,73 @@
 @font-face{
-    font-family: 'pixel';
-    src: url('assets/fonts/PxPlus_VGA_SquarePx.ttf');
-    src: url('assets/fonts/PxPlus_VGA_SquarePx.woff');
-  }
-  *{
-      box-sizing: border-box;
-  }
-  body {
-    margin: 0;
-    padding: 0;
-  }
-  
-  .main{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    mix-blend-mode: exclusion;
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .big-text{
-    text-align: center;
-    font-size: 4rem;
-    color: aqua;
-    font-family: 'pixel', Courier, monospace;
-  }
+  font-family: 'pixel';
+  src: url('assets/fonts/PxPlus_VGA_SquarePx.ttf');
+  src: url('assets/fonts/PxPlus_VGA_SquarePx.woff');
+}
+body, html { position: fixed; }
+*{
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  cursor:move;
+}
 
-  .small-text{
-      cursor: help;
-    text-align: center;
-    font-size: 2rem;
-    color: aqua;
-    font-family: 'pixel', Courier, monospace;
-  }
+a{
+  color:#fff;
+}
 
-  .help-text{
-      display: none;
-      position: fixed;
-      max-width: 200px;
-      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-      color: #3f3;
-      background-color: black;
-      border: solid 3px white;
-      padding: 0.5rem;
-      box-shadow: #3f3 5px 5px 5px;
-      /* mix-blend-mode: exclusion; */
-  }
+.main{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  mix-blend-mode: exclusion;
+  background-color: black;
+  overflow-y:auto;
+}
+
+.big-text{
+  text-align: center;
+  font-size:64pt;
+  color: aqua;
+  font-family: 'pixel', Courier, monospace;
+}
+
+.small-text{
+  cursor: help;
+  text-align: center;
+  font-size: 2rem;
+  color: aqua;
+  font-family: 'pixel', Courier, monospace;
+}
+
+.event-holder{
+  margin:50px;
+  font-family: 'pixel', Courier, monospace;
+  font-size:24pt;
+  color:#fff;
+  text-align:left;
+}
+.event{
+  margin-bottom:1em;
+  cursor:help;
+}
+.desc{
+  margin-left:1em;
+}
+
+.help-text{
+  display: none;
+  position: fixed;
+  max-width: 200px;
+  font-family: 'pixel', Courier, monospace;
+  font-size:20pt;
+  color: #3f3;
+  background-color: black;
+  border: solid 3px white;
+  padding: 0.5rem;
+  box-shadow: #3f3 5px 5px 5px;
+  /* mix-blend-mode: exclusion; */
+}
