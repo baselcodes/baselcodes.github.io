@@ -6,6 +6,33 @@
     <title>basel.codes - PCD__2020</title>
     <script src="../js/libraries/p5.min.js"></script>
     <link rel="stylesheet" href="style.css">
+    <style type="text/css">
+        a{
+            background:blue;
+            /*border:5px solid blue;*/
+            border-radius: 15px;
+            padding:10px;
+        }
+        .stream{
+            position:fixed;
+            right:25px;
+            top:25px;
+
+            /*background:blue;*/
+        }
+        .stream iframe{
+           /*padding:50px;*/
+            border-radius: 100%;
+            border:5px solid blue;
+            transition: .4s;
+        }
+        .stream iframe:hover{
+            border-radius: 0;
+        }
+        .event{
+            margin-bottom:15px;
+        }
+    </style>
 </head>
 <body>
     <div class="main">
@@ -17,12 +44,19 @@
         	-----------------------
         	</div>
 
-			<div class="event" data-caption="▶️ wait for it...">
-	    		STREAMING URL + EMBED ONCE LIVE<br>
+			<div class="event" data-caption="▶️" style="">
+	    		<a href="">STREAM ON YOUTUBE »</a>
 	    	</div>
+            <div class="event" data-caption="💬">
+                <a href="https://discord.gg/STKTfDhKgy" target="_blank">CHAT ON DISCORD »</a>
+            </div>
 
         	WORKSHOPS<br>
         	---------<br>
+            <div class="event" data-caption="🤯">
+                <a href="https://github.com/baselcodes/PCD2020" target="_blank">WORKSHOP REPOS »</a>
+            </div>
+
         	<div class="event" data-caption="Basic intro to p5.js + P5LIVE editor » Mark Iandovka and Ted Davis">
 	    		10:00 – 12:00<br>
 	    	    <span class="desc">P5 BASICS / P5LIVE</span><br>
@@ -43,6 +77,10 @@
 	    	    <span class="desc">TERMINAL & TWITTER</span>
 	    	</div>
         </div>
+    </div>
+
+    <div class="stream">
+        <iframe width="360" height="240" src="https://www.youtube.com/embed/LjyGeYOcDWQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
     <div class="help-text">
