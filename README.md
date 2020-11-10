@@ -1,2 +1,2 @@
-# ⌨️ [BASEL.CODES](https://baselcodes.github.io/) 📡
+# ⌨️ [BASEL.CODES](https://basel.codes) 📡
 
