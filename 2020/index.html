@@ -11,7 +11,7 @@
             background:blue;
             /*border:5px solid blue;*/
             border-radius: 15px;
-            padding:10px;
+            padding:5px;
         }
         .stream{
             position:fixed;
@@ -32,6 +32,9 @@
         .event{
             margin-bottom:15px;
         }
+        .past{
+            color:#666;
+        }
     </style>
 </head>
 <body>
@@ -40,47 +43,42 @@
 
         	<div class="event" data-caption="👻 BOO!">
         	PCD2020 » BASEL.CODES<br>
-        	SATURDAY, OCTOBER 31st!<br>
+        	<span class="past">SATURDAY, OCTOBER 31st!</span><br>
         	-----------------------
         	</div>
 
-			<div class="event" data-caption="▶️" style="">
-	    		<a href="https://www.youtube.com/watch?v=LjyGeYOcDWQ&feature=emb_title">STREAM ON YOUTUBE »</a>
-	    	</div>
-            <div class="event" data-caption="💬">
-                <a href="https://discord.gg/STKTfDhKgy" target="_blank">CHAT ON DISCORD »</a>
-            </div>
 
         	WORKSHOPS<br>
         	---------<br>
-            <div class="event" data-caption="🤯">
-                <a href="https://github.com/baselcodes/PCD2020" target="_blank">WORKSHOP REPOS »</a>
-            </div>
 
         	<div class="event" data-caption="Basic intro to p5.js + P5LIVE editor » Mark Iandovka and Ted Davis">
-	    		10:00 – 12:00<br>
+                <span class="past">10:00 – 12:00</span><br>
 	    	    <span class="desc">P5 BASICS / P5LIVE</span><br>
+                <a class="desc" onclick="loadWorkshop('0tX2PwCMgSo')">WATCH</a> / <a href="https://github.com/baselcodes/PCD2020/tree/master/p5.js%20Basics%20%2B%20P5LIVE">REPO</a>
 	    	</div>
-
 	    	<div class="event" data-caption="🍔🍟🍕🌭🥪🌮🌯🥙🥘🍲🥣🥗🍱🍛🍜🍝🍣🥡">
-	    		12:00 – 13:00<br>
+	    		<span class="past">
+                    12:00 – 13:00<br>
 	    	    <span class="desc">LUNCH</span>
+                </span>
 	    	</div>
 
 	    	<div class="event" data-caption="Basic shaders GLSL workshop » Lena Frei and Alain Brusch">
-	    		13:00 – 15:00<br>
-	    	    <span class="desc">SHADERS</span>
+	    		<span class="past">13:00 – 15:00</span><br>
+	    	    <span class="desc">SHADERS</span><br>
+                <a class="desc">*coming soon*</a>
 	    	</div>
 
 			<div class="event" data-caption="Basic terminal commands and twitter API » Yann Martins and Max Frischknecht">
-	    		15:00 – 17:00<br>
-	    	    <span class="desc">TERMINAL & TWITTER</span>
+	    		<span class="past">15:00 – 17:00</span><br>
+	    	    <span class="desc">TERMINAL & TWITTER</span><br>
+                <a class="desc" onclick="loadWorkshop('bVWljJnLrls')">WATCH</a> / <a href="https://github.com/baselcodes/PCD2020/tree/master/Twitter%20Workshop">REPO</a>
 	    	</div>
         </div>
     </div>
 
     <div class="stream">
-        <iframe width="360" height="240" src="https://www.youtube.com/embed/LjyGeYOcDWQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe id="yt-player" style="background:#000;" width="360" height="240" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
     <div class="help-text">
@@ -101,6 +99,7 @@
         let x = 0
         let y = 0
         let show = false
+        let yt = document.getElementById('yt-player')
         const help = document.querySelector('.help-text')
         window.onmousemove = e => {
             x = e.clientX
@@ -116,6 +115,12 @@
                 help.textContent = p.dataset.caption
             })
             p.addEventListener('mouseleave', e => help.style.display = 'none')
+        }
+
+        function loadWorkshop(vID){
+            let vPath = 'https://www.youtube.com/embed/' + vID + '?autoplay=1'
+            yt.src = vPath;
+            yt.click();
         }
     </script>
 </body>
