@@ -7,27 +7,82 @@
     <script src="../js/libraries/p5.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <style type="text/css">
-        body, html { position: fixed; }
-        .big-text{
-            font-size:64pt;
-        }
         a{
-            color:#fff;
+            background:blue;
+            /*border:5px solid blue;*/
+            border-radius: 15px;
+            padding:5px;
+        }
+        .stream{
+            position:fixed;
+            right:25px;
+            top:25px;
+
+            /*background:blue;*/
+        }
+        .stream iframe{
+           /*padding:50px;*/
+            border-radius: 100%;
+            border:5px solid blue;
+            transition: .4s;
+        }
+        .stream iframe:hover{
+            border-radius: 0;
+        }
+        .event{
+            margin-bottom:15px;
+        }
+        .past{
+            color:#666;
         }
     </style>
 </head>
 <body>
     <div class="main">
-        <p class="big-text">
+        <div class="event-holder">
 
-            PCD2020 = "OCTOBER 31"<br><br>
-            OPEN CALL »
-            <a href="https://forms.gle/8CVVzr5rhhr3gX748" target="_blank" rel="noopener noreferrer">CLICK HERE
-            </a> <br>
-            <a href="program.html" target="_blank" rel="noopener noreferrer" onclick="window.open('program.html', 
-            'newwindow',
-            'width=450px,height=250');return false;">PROGRAM</a>
-        </p>
+        	<div class="event" data-caption="👻 BOO!">
+        	PCD2020 » BASEL.CODES<br>
+        	<span class="past">SATURDAY, OCTOBER 31st!</span><br>
+        	-----------------------
+        	</div>
+
+
+        	WORKSHOPS<br>
+        	---------<br>
+
+        	<div class="event" data-caption="Basic intro to p5.js + P5LIVE editor » Mark Iandovka and Ted Davis">
+                <span class="past">10:00 – 12:00</span><br>
+	    	    <span class="desc">P5 BASICS / P5LIVE</span><br>
+                <a class="desc" onclick="loadWorkshop('0tX2PwCMgSo')">WATCH</a> / <a href="https://github.com/baselcodes/PCD2020/tree/master/p5.js%20Basics%20%2B%20P5LIVE">REPO</a>
+	    	</div>
+	    	<div class="event" data-caption="🍔🍟🍕🌭🥪🌮🌯🥙🥘🍲🥣🥗🍱🍛🍜🍝🍣🥡">
+	    		<span class="past">
+                    12:00 – 13:00<br>
+	    	    <span class="desc">LUNCH</span>
+                </span>
+	    	</div>
+
+	    	<div class="event" data-caption="Basic shaders GLSL workshop » Lena Frei and Alain Brusch">
+	    		<span class="past">13:00 – 15:00</span><br>
+	    	    <span class="desc">SHADERS</span><br>
+                <a class="desc" onclick="loadWorkshop('FkMQbeaGU20')">WATCH</a> / <a href="https://github.com/baselcodes/PCD2020/tree/master/Shaders%20Workshop">REPO</a>
+	    	</div>
+
+			<div class="event" data-caption="Basic terminal commands and twitter API » Yann Martins and Max Frischknecht">
+	    		<span class="past">15:00 – 17:00</span><br>
+	    	    <span class="desc">TERMINAL & TWITTER</span><br>
+                <a class="desc" onclick="loadWorkshop('bVWljJnLrls')">WATCH</a> / <a href="https://github.com/baselcodes/PCD2020/tree/master/Twitter%20Workshop">REPO</a>
+	    	</div>
+        </div>
+    </div>
+
+    <div class="stream">
+        <iframe id="yt-player" style="background:#000;" width="360" height="240" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <div class="help-text">
+        HELP!
     </div>
    <script src="assets/js/sketch.js"></script>
    <script type="text/javascript">
@@ -39,5 +94,34 @@
         };
 
    </script>
+
+   <script>
+        let x = 0
+        let y = 0
+        let show = false
+        let yt = document.getElementById('yt-player')
+        const help = document.querySelector('.help-text')
+        window.onmousemove = e => {
+            x = e.clientX
+            y = e.clientY
+            help.style.top = y - 50 + 'px'
+            help.style.left = x + 20 + 'px'
+        }
+
+        const paragraphs = document.querySelectorAll('div.event')
+        for (const p of paragraphs) {
+            p.addEventListener('mouseover', e => {
+                help.style.display = 'block'
+                help.textContent = p.dataset.caption
+            })
+            p.addEventListener('mouseleave', e => help.style.display = 'none')
+        }
+
+        function loadWorkshop(vID){
+            let vPath = 'https://www.youtube.com/embed/' + vID + '?autoplay=1'
+            yt.src = vPath;
+            yt.click();
+        }
+    </script>
 </body>
 </html>
