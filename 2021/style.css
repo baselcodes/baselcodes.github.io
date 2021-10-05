@@ -1,0 +1,18 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    background-color: #33f;
+    color: #fefefe;
+}
+
+.lettering {
+    width: 300px;
+    font-size: 0.75rem;
+    word-wrap: break-word;
+}
