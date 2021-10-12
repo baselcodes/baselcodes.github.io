@@ -3,7 +3,7 @@ let bballs = [];
 function setup() {
   cnv = createCanvas(innerWidth, innerHeight);
   cnv.parent('p5');
-  bballs = [new Bounce_Ball(50, 50, 100, '#00f'), new Bounce_Ball(200, 200, 100, '#f00')]
+  bballs = [new Bounce_Ball(50, 50, 100, '#f00'), new Bounce_Ball(200, 200, 100, '#f00')]
 }
 function draw() {
   background('#eee')

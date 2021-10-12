@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+
 body {
     margin: 0px;
     padding: 0px;
@@ -29,7 +30,14 @@ body {
     height: auto;
 }
 
-#title-animation p, #title-animation a {
+
+.intro-content {
+    mix-blend-mode: multiply;
+}
+
+
+#title-animation p,
+#title-animation a {
     word-break: normal;
     display: inline-block;
     padding: 4px 12px 5px 12px;
@@ -43,14 +51,16 @@ body {
     color: blue;
 }
 
-#title-animation a, .intro a {
+#title-animation a,
+.intro a {
     background-color: blue;
     color: white;
     text-decoration: none;
     transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 }
 
-#title-animation a:hover, .intro a:hover {
+#title-animation a:hover,
+.intro a:hover {
     background-color: white;
     color: blue;
     text-decoration: none;
@@ -104,22 +114,24 @@ p#imprint {
     transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25), 0 6px 6px rgba(0, 0, 0, 0.22);
 }
-.main{
+
+.main {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas: "intro intro log"
 }
-.log{
+
+.log {
     grid-area: log;
     font-family: 'Courier New', Courier, monospace;
 }
 
-.log a{
+.log a {
     color: #00f;
     text-decoration: none;
 }
 
-.log a:hover{
+.log a:hover {
     color: #f00;
     text-decoration: underline;
 }
@@ -155,7 +167,7 @@ p#imprint {
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25), 0 6px 6px rgba(0, 0, 0, 0.22);
 }
 
-.intro-content{
+.intro-content {
     width: 50%;
     min-width: 300px;
     max-width: 500px;
@@ -166,7 +178,7 @@ p#imprint {
     transform: skewY(-10deg);
 }
 
-.center-item{
+.center-item {
     display: flex;
     align-items: center;
     justify-content: center;
