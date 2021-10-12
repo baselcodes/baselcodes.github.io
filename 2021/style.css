@@ -11,8 +11,13 @@ body {
     color: #fefefe;
 }
 
+a {
+    color: #fefefe;
+}
+
 .lettering {
     width: 300px;
+    margin: auto;
     font-size: 0.75rem;
     word-wrap: break-word;
 }
