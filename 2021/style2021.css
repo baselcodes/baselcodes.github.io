@@ -38,31 +38,45 @@ a {
   width: max-content;
 }
 
+
+
 .lettering {
   overflow: visible;
-  font-size: 1.2vw;
-  line-height: 1.3vw;
+  font-size: 2.2vw;
+  line-height: 2.4vw;
   color: white;
-  /* font-size: 0.75rem;
-  line-height: 0.85rem; */
   word-wrap: break-word;
+}
+
+@media (min-width: 768px) {
+  .lettering {
+    font-size: 1.2vw;
+    line-height: 1.3vw;
+  }
 }
 
 h1,
 h2,
 h3, 
 p, ul, li, br, a{
-  /* font-family: 'Poppins', sans-serif; */
-  /* font-family: 'Roboto Mono', monospace; */
-  /* font-family: 'Xanh Mono', monospace; */
   font-family: 'Space Mono', monospace;
-  font-size: 28px;
-  line-height: 32px;
-  /* font-weight: 400; */
+  font-size: 18px;
+  line-height: 24px;
   color: white;
   padding: 0;
   margin: 0;
 }
+
+@media (min-width: 768px) {
+  h1,
+  h2,
+  h3, 
+  p, ul, li, br, a{
+    font-size: 28px;
+    line-height: 32px;
+  }
+}
+
 .program-title {
   text-align: center;
 }
@@ -84,27 +98,26 @@ p, ul, li, br, a{
   padding-bottom: 160px;
 }
 
+
+
 .pcd-call {
   background-color: yellow;
   position: fixed;
-  top: 30px;
-  right: 30px;
-  border-radius: 100%;
-  width: 250px;
-  height: 250px;
+  top: 10px;
+  right: 0px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
+  border: 12px groove white;
+  border-radius: 100%;
+
   display: flex; /* or inline-flex */
   align-items: center; 
   justify-content: center;
-  border: 32px groove white;
   -webkit-animation:spin 60s linear infinite;
   -moz-animation:spin 60s linear infinite;
   animation:spin 60s linear infinite;
 }
-
-@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
-@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
-@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
 .pcd-call a {
   color: black !important;
@@ -112,6 +125,26 @@ p, ul, li, br, a{
   display: block;
   text-align: center;
   text-decoration: none;
-  font-size: 18px !important;
-  line-height: 18px !important;
+  font-size: 12px !important;
+  line-height: 12px !important;
 }
+
+@media (min-width: 768px) {
+  .pcd-call {
+    top: 30px;
+    right: 30px;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 32px groove white;
+  }
+  .pcd-call a {
+    font-size: 18px !important;
+    line-height: 18px !important;
+  }
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
