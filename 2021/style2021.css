@@ -46,6 +46,7 @@ a:hover {
   color: white;
   word-wrap: break-word;
   font-family: 'Roboto Mono', monospace;
+  margin: 0;
 }
 
 @media (min-width: 768px) {
@@ -78,22 +79,21 @@ p, ul, li, br, a{
 }
 
 .program-title {
-  text-align: center;
+  /* text-align: center; */
 }
 
 .program-row {
-  padding-top: 16px;
+  padding-top: 0px;
   padding-bottom: 16px;
 }
 
 .border-b {
   border-bottom: 32px groove  white;
-  /* border-bottom: 1px dotted white; */
 }
 
-.border-b-thin {
+/* .border-b-thin {
   border-bottom: 32px groove  white;
-}
+} */
 
 .content, .space-b {
   padding-bottom: 160px;
@@ -113,7 +113,7 @@ p, ul, li, br, a{
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: 12px groove white;
+  /* border: 12px groove white; */
   border-radius: 100%;
 
   display: flex; /* or inline-flex */
@@ -141,7 +141,7 @@ p, ul, li, br, a{
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    border: 32px groove white;
+    /* border: 32px groove white; */
   }
   .pcd-call p {
     font-size: 18px !important;
