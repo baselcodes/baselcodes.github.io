@@ -4,9 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
 * {
   box-sizing: border-box;
-  /* font-family: 'Roboto Mono', monospace; */
-  font-family: 'Space Mono', monospace;
-
+  font-family: 'Roboto Mono', monospace;
 }
 
 html {
@@ -21,6 +19,9 @@ body {
 
 a {
   color: #fefefe;
+}
+a:hover {
+  color: yellow;
 }
 
 .container-fluid {
@@ -38,14 +39,13 @@ a {
   width: max-content;
 }
 
-
-
 .lettering {
   overflow: visible;
   font-size: 2.2vw;
   line-height: 2.4vw;
   color: white;
   word-wrap: break-word;
+  font-family: 'Roboto Mono', monospace;
 }
 
 @media (min-width: 768px) {
@@ -98,6 +98,10 @@ p, ul, li, br, a{
   padding-bottom: 160px;
 }
 
+.space-r {
+  margin-right: 25px;
+}
+
 
 
 .pcd-call {
@@ -119,7 +123,7 @@ p, ul, li, br, a{
   animation:spin 60s linear infinite;
 }
 
-.pcd-call a {
+.pcd-call p {
   color: black !important;
   margin: 60px;
   display: block;
@@ -138,7 +142,7 @@ p, ul, li, br, a{
     border-radius: 50%;
     border: 32px groove white;
   }
-  .pcd-call a {
+  .pcd-call p {
     font-size: 18px !important;
     line-height: 18px !important;
   }
