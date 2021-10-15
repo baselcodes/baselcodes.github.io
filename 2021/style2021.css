@@ -88,6 +88,7 @@ p, ul, li, br, a{
 
 .border-b {
   border-bottom: 32px groove  white;
+  /* border-bottom: 1px dotted white; */
 }
 
 .border-b-thin {
