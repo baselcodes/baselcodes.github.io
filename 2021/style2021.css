@@ -2,6 +2,7 @@
 
 * {
   box-sizing: border-box;
+  font-family: 'Roboto Mono', monospace;
 }
 
 html {
@@ -22,13 +23,17 @@ a {
 }
 
 .lettering {
-  /* width: 300px; */
-  /* margin: auto; */
-  height: auto;
-  width: auto;
-  overflow:visible;
-  font-size: 0.75rem;
+  overflow: visible;
+  font-size: 2vw;
+  line-height: 2vw;
+  /* font-size: 0.75rem;
+  line-height: 0.85rem; */
   word-wrap: break-word;
-  font-family: 'Roboto Mono', monospace;
+}
+
+h1,
+h2,
+p {
+  font-size: 0.75rem;
   line-height: 0.85rem;
 }
