@@ -106,14 +106,15 @@ p, ul, li, br, a{
 
 
 .pcd-call {
-  background-color: yellow;
+  background-color: #03ff;
+  /* mix-blend-mode: exclusion; */
   position: fixed;
   top: 10px;
   right: 10px;
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  /* border: 12px groove white; */
+  border: 2px dashed white;
   border-radius: 100%;
 
   display: flex; /* or inline-flex */
@@ -125,7 +126,7 @@ p, ul, li, br, a{
 }
 
 .pcd-call p {
-  color: black !important;
+  color: white !important;
   margin: 60px;
   display: block;
   text-align: center;
