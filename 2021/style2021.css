@@ -104,7 +104,7 @@ p, ul, li, br, a{
   background-color: yellow;
   position: fixed;
   top: 10px;
-  right: 0px;
+  right: 10px;
   width: 150px;
   height: 150px;
   border-radius: 50%;
