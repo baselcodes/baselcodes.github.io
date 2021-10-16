@@ -106,7 +106,7 @@ p, ul, li, br, a{
 
 
 .pcd-call {
-  background-color: #03ff;
+  background-color: rgba(51,51,255,1);
   /* mix-blend-mode: exclusion; */
   position: fixed;
   top: 10px;
@@ -114,7 +114,7 @@ p, ul, li, br, a{
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: 2px dashed white;
+  border: 3px dashed white;
   border-radius: 100%;
 
   display: flex; /* or inline-flex */
@@ -122,31 +122,31 @@ p, ul, li, br, a{
   justify-content: center;
   -webkit-animation:spin 60s linear infinite;
   -moz-animation:spin 60s linear infinite;
-  animation:spin 60s linear infinite;
+  animation:spin 20s linear infinite;
 }
 
 .pcd-call p {
   color: white !important;
-  margin: 60px;
+  margin: 20px;
   display: block;
   text-align: center;
   text-decoration: none;
   font-size: 12px !important;
-  line-height: 12px !important;
+  line-height: 16px !important;
 }
 
 @media (min-width: 768px) {
   .pcd-call {
     top: 30px;
     right: 30px;
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     /* border: 32px groove white; */
   }
   .pcd-call p {
-    font-size: 18px !important;
-    line-height: 18px !important;
+    font-size: 22px !important;
+    line-height: 28px !important;
   }
 }
 
