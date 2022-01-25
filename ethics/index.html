@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta charset="utf-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="referrer" content="origin-when-cross-origin" />
+
+  <title>Ethics & Technology</title>
+  <meta name="description"
+    content="Basel Codes is a collective of coders 👾👩‍💻👨‍💻, artists 👨‍🎨👩‍🎨 and designers 🧞‍♂️🧞‍♀️. We are interested in the 🌈 creative 🌈 potential of code." />
+  <meta name="author" content="Basel Codes Community" />
+
+  <!-- Facebook -->
+  <meta property="og:url" content="http://basel.codes" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="basel.codes" />
+  <meta property="og:description"
+    content="Basel Codes is a collective of coders 👾👩‍💻👨‍💻, artists 👨‍🎨👩‍🎨 and designers 🧞‍♂️🧞‍♀️. We are interested in the 🌈 creative 🌈 potential of code." />
+  <meta property="og:image" content="https://basel.codes/og.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="basel.codes" />
+  <meta name="twitter:creator" content="basel.codes" />
+  <meta name="twitter:title" content="basel.codes" />
+  <meta name="twitter:description" content="Basel Codes is a collective of
+		coders 👾👩‍💻👨‍💻, artists 👨‍🎨👩‍🎨 and designers 🧞‍♂️🧞‍♀️. We are interested in the 🌈
+		creative 🌈 potential of code.>
+		<meta name=" twitter:image" content="https://basel.codes/og.png" />
+
+  <link rel="stylesheet" type="text/css" media="screen" href="./ethics-css/ethics-styles.css" />
+  <link rel="icon" type="image/png" href="favicon-196x196.png" sizes="196x196" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body>
+  <h1>Ethics & Technology</h1>
+
+  <div class="home-panel">
+    <div id="intro-txt"></div>
+  </div>
+
+  <script>
+    fetch("./content/introduction.md")    // The path to the raw Markdown file
+      .then(response => response.blob())  // Unwrap to a blob...
+      .then(blob => blob.text())          // ...then to raw text...
+      .then(markdown => {                 // ...then pass the raw text into marked.parse
+        document.getElementById('intro-txt').innerHTML =
+      marked.parse(markdown);
+      });
+  </script>
+
+
+</body>

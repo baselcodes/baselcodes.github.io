@@ -1,0 +1,26 @@
+body {
+  background: rgba(144, 121, 214, 1);
+}
+
+body, p, span, a, li, ul {
+  color: #FFFF00;
+  font-family: 'Ginto Nord Trial Bold', Helvetica;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 38px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+h1, h2, h3, h4 {
+  color: #FFFF00;
+  font-family: 'Ginto Nord Trial Bold', Helvetica;
+  font-weight: 700;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 64px;
+  text-align: center;
+}
+
