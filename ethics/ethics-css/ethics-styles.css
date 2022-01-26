@@ -1,26 +1,98 @@
+/* resetting
+---------------------------------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  /* transition: 0.3s */
+}
+
+/* base styles
+---------------------------------------------------- */
+
 body {
   background: rgba(144, 121, 214, 1);
 }
 
-body, p, span, a, li, ul {
+body, h1, h2, h3, h4, p, span, a, li, ul {
   color: #FFFF00;
-  font-family: 'Ginto Nord Trial Bold', Helvetica;
+  font-family: 'Ginto Nord Trial', Times;
   font-size: 30px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 38px;
   letter-spacing: 0px;
   text-align: left;
 }
 
-h1, h2, h3, h4 {
-  color: #FFFF00;
+/* typography
+---------------------------------------------------- */
+
+.type-l {
   font-family: 'Ginto Nord Trial Bold', Helvetica;
   font-weight: 700;
-  font-size: 60px;
-  font-style: normal;
-  font-weight: 700;
   line-height: 64px;
+  font-size: 60px;
+}
+
+.type-s {
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: 1px;
+}
+
+.type-center {
   text-align: center;
 }
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+/* header
+---------------------------------------------------- */
+
+.header {
+  margin: 48px;
+}
+
+/* home page 
+---------------------------------------------------- */
+
+.home-panel {
+  margin: 0px 80px;
+  padding: 28px 32px;
+  background-color: coral;
+}
+
+/* intro text */
+.home-panel p:first-of-type {
+  padding-bottom: 28px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid yellow;
+}
+
+/* list of events  */
+.home-panel a {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+/* sub pages
+---------------------------------------------------- */
+
+
+/* footer
+---------------------------------------------------- */
+
+
 
