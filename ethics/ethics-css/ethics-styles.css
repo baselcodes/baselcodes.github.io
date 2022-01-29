@@ -1,3 +1,23 @@
+@font-face {
+  font-family: 'ginto-regular';
+  src: url(../fonts/ABCGintoNord-Regular.woff);
+}
+
+@font-face {
+  font-family: 'ginto-regular-it';
+  src: url(../fonts/ABCGintoNord-RegularIta.woff);
+}
+
+@font-face {
+  font-family: 'ginto-bold';
+  src: url(../fonts/ABCGintoNord-Black.woff);
+}
+
+@font-face {
+  font-family: 'ginto-bold-it';
+  src: url(../fonts/ABCGintoNord-BlackIta.woff);
+}
+
 /* resetting
 ---------------------------------------------------- */
 
@@ -14,12 +34,12 @@
 ---------------------------------------------------- */
 
 body {
-  background: rgba(144, 121, 214, 1);
+  background: rgb(0, 0, 0);
 }
 
 body, h1, h2, h3, h4, p, span, a, li, ul {
-  color: #FFFF00;
-  font-family: 'Ginto Nord Trial', Times;
+  color: #000;
+  font-family: 'ginto-regular', Times;
   font-size: 30px;
   font-style: normal;
   font-weight: 500;
@@ -32,10 +52,9 @@ body, h1, h2, h3, h4, p, span, a, li, ul {
 ---------------------------------------------------- */
 
 .type-l {
-  font-family: 'Ginto Nord Trial Bold', Helvetica;
-  font-weight: 700;
-  line-height: 64px;
-  font-size: 60px;
+  font-family: 'ginto-bold', Helvetica;
+  line-height: 104px;
+  font-size: 100px;
 }
 
 .type-s {
@@ -48,7 +67,14 @@ body, h1, h2, h3, h4, p, span, a, li, ul {
   text-align: center;
 }
 
+.break {
+  word-break: break-all;
+}
+
+
+
 a {
+  font-family: 'ginto-regular-it';
   text-decoration: none;
 }
 
@@ -57,20 +83,53 @@ a:hover {
 }
 
 
+em {
+  font-family: 'ginto-regular-it';
+}
+
 /* header
 ---------------------------------------------------- */
 
 .header {
-  margin: 48px;
+  z-index: -1;
+  position: fixed;
+  display: flex;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  /* align-content: flex-end; */
+  justify-content: center;
+  /* margin: 4; */
+}
+
+.header h1 {
+  color: white;
+  text-shadow: white 0px 0px 50px;
+}
+
+.header h2 {
+  color: white;
 }
 
 /* home page 
 ---------------------------------------------------- */
 
 .home-panel {
-  margin: 0px 80px;
+  /* margin: 0px 80px; */
+  margin: auto;
   padding: 28px 32px;
-  background-color: coral;
+  max-width: 650px;
+  /* background-color: #3333ffaa; */
+}
+
+.home-panel p {
+  text-shadow:  white 0px 0px 25px, 
+  white 0px 0px 20px, 
+  white 0px 0px 15px, 
+  white 0px 0px 5px;
 }
 
 /* intro text */
@@ -82,7 +141,7 @@ a:hover {
 
 /* list of events  */
 .home-panel a {
-  display: block;
+  /* display: block; */
   margin: 0;
   padding: 0;
 }
@@ -93,6 +152,3 @@ a:hover {
 
 /* footer
 ---------------------------------------------------- */
-
-
-
