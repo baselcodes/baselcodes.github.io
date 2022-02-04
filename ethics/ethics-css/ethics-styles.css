@@ -136,11 +136,6 @@ a:hover {
   padding-bottom: 21px;
 }
 
-/*  */
-.volume-title {
-  /* padding-bottom: 28px; */
-  /* border-bottom: 1px solid yellow; */
-}
 /* list of events  */
 .home-panel #volume-index a {
   text-align: center;
@@ -154,6 +149,37 @@ a:hover {
 
 /* sub pages
 ---------------------------------------------------- */
+
+.volume-panel {
+  position: relative;
+  z-index: 10;
+  margin-top: 100vh;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-bottom: 75px;
+  padding: 28px 32px;
+  background-color: #EFEFEF;
+  background: rgba(144, 121, 214, 0.90);
+  border-radius: 30px;
+}
+
+.volume-panel #volume-txt h2 {
+  font-family: 'ginto-bold', Helvetica;
+  text-align: center;
+  margin-bottom: 28px;
+  font-weight: 700;
+  line-height: 64px;
+  font-size: 60px;
+}
+
+.volume-panel #volume-txt p {
+  padding-bottom: 21px;
+}
+
+.volume-panel #volume-txt li {
+  margin-left: 30px;
+}
+
 
 
 /* footer
