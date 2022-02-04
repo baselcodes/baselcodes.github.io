@@ -80,27 +80,42 @@ a:hover {
 ---------------------------------------------------- */
 
 .header {
-  margin: 48px;
+  margin-top: 48px;
+  left: 0;
+  right: 0;
+  top: 0;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
 }
 
 /* home page 
 ---------------------------------------------------- */
 
 .home-panel {
-  margin: 0px 80px;
+  position: relative;
+  z-index: 10;
+  margin-top: 100vh;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-bottom: 75px;
   padding: 28px 32px;
   background-color: coral;
 }
 
 /* intro text */
-.home-panel p:first-of-type {
+.home-panel #intro-txt {
   padding-bottom: 28px;
   margin-bottom: 28px;
   border-bottom: 1px solid yellow;
 }
 
+.home-panel #intro-txt p {
+  padding-bottom: 21px;
+}
+
 /* list of events  */
-.home-panel a {
+.home-panel #volume-index a {
   display: block;
   margin: 0;
   padding: 0;

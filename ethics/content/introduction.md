@@ -5,9 +5,3 @@ Recent years have seen the development and advancement of new and complex techno
 Social media platforms are under fire after the Cambridge Analytica scandal; exposing how privacy can be weaponized to create political consent and dissent. AI based system have shown to emphasize racial discrimination; while gig economy has made precarious work even more precarious.
 
 This and other topics will be adressed during the screenings. Each one of them will be opened by a short introduction and followed by a closing discussion.
-
-
-
-[Volume 1 – Surveillance & Privacy](./volume/one)
-
-[Volume 2 – Labour](./volume/two)
