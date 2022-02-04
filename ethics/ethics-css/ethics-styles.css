@@ -89,6 +89,25 @@ a:hover {
   width: 100%;
 }
 
+.header h1, .header h2, .header a {
+  color: rgba(144, 121, 214, 1);
+
+}
+
+
+/* sketch container
+---------------------------------------------------- */
+
+#sketch-container {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  right: 0; 
+  top: 0;
+  bottom: 0;
+}
+
 /* home page 
 ---------------------------------------------------- */
 
@@ -100,25 +119,37 @@ a:hover {
   margin-right: 80px;
   margin-bottom: 75px;
   padding: 28px 32px;
-  background-color: coral;
+  background-color: #EFEFEF;
+  background: rgba(144, 121, 214, 0.90);
+  border-radius: 30px;
+
 }
 
 /* intro text */
 .home-panel #intro-txt {
   padding-bottom: 28px;
   margin-bottom: 28px;
-  border-bottom: 1px solid yellow;
+  /* border-bottom: 1px solid yellow; */
 }
 
 .home-panel #intro-txt p {
   padding-bottom: 21px;
 }
 
+/*  */
+.volume-title {
+  /* padding-bottom: 28px; */
+  /* border-bottom: 1px solid yellow; */
+}
 /* list of events  */
 .home-panel #volume-index a {
+  text-align: center;
   display: block;
   margin: 0;
   padding: 0;
+  padding-bottom: 28px;
+  padding-top: 28px;
+  border-bottom: 1px solid yellow;
 }
 
 /* sub pages

@@ -1,133 +1,79 @@
-let faceapi;
+// Copyright (c) 2019 ml5
+//
+// This software is released under the MIT License.
+// https://opensource.org/licenses/MIT
+
+/* ===
+ml5 Example
+PoseNet example using p5.js
+=== */
+
 let video;
-let detections;
-const width = 360;
-const height = 280;
-let canvas, ctx;
+let poseNet;
+let poses = [];
 
-// by default all options are set to true
-const detectionOptions = {
-  withLandmarks: true,
-  withDescriptors: false,
-};
+function setup() {
+  let cnv = createCanvas(windowWidth, windowHeight);
+  cnv.parent("sketch-container");
+  video = createCapture(VIDEO);
+  video.size(640, 480);
 
-async function make() {
-  // get the video
-  video = await getVideo();
-
-  canvas = createCanvas(width, height);
-  ctx = canvas.getContext("2d");
-
-  faceapi = ml5.faceApi(video, detectionOptions, modelReady);
+  // Create a new poseNet method with a single detection
+  poseNet = ml5.poseNet(video, modelReady);
+  // This sets up an event that fills the global variable "poses"
+  // with an array every time new poses are detected
+  poseNet.on("pose", function(results) {
+    poses = results;
+  });
+  // Hide the video element, and just show the canvas
+  video.hide();
 }
-// call app.map.init() once the DOM is loaded
-window.addEventListener("DOMContentLoaded", function() {
-  make();
-});
 
 function modelReady() {
-  console.log("ready!");
-  faceapi.detect(gotResults);
+  select("#status").html("Model Loaded");
 }
 
-function gotResults(err, result) {
-  if (err) {
-    console.log(err);
-    return;
-  }
+function draw() {
+  // background(144, 121, 214);
+  background(230)
+  translate((width/2 - 640/2), (height/2 - 480/2))
+  image(video, 0, 0, 640, 480);
 
-  // console.log(result)
-  detections = result;
+  // We can call both functions to draw all keypoints and the skeletons
+  drawKeypoints();
+  drawSkeleton();
+}
 
-  // Clear part of the canvas
-  ctx.fillStyle = "#000000";
-  ctx.fillRect(0, 0, width, height);
-
-  ctx.drawImage(video, 0, 0, width, height);
-
-  if (detections) {
-    if (detections.length > 0) {
-      drawBox(detections);
-      drawLandmarks(detections);
+// A function to draw ellipses over the detected keypoints
+function drawKeypoints() {
+  // Loop through all the poses detected
+  for (let i = 0; i < poses.length; i += 1) {
+    // For each pose detected, loop through all the keypoints
+    const pose = poses[i].pose;
+    for (let j = 0; j < pose.keypoints.length; j += 1) {
+      // A keypoint is an object describing a body part (like rightArm or leftShoulder)
+      const keypoint = pose.keypoints[j];
+      // Only draw an ellipse is the pose probability is bigger than 0.2
+      if (keypoint.score > 0.2) {
+        fill(255, 255, 0);
+        noStroke();
+        ellipse(keypoint.position.x, keypoint.position.y, 10, 10);
+      }
     }
   }
-  faceapi.detect(gotResults);
 }
 
-function drawBox(detections) {
-  for (let i = 0; i < detections.length; i += 1) {
-    const alignedRect = detections[i].alignedRect;
-    const x = alignedRect._box._x;
-    const y = alignedRect._box._y;
-    const boxWidth = alignedRect._box._width;
-    const boxHeight = alignedRect._box._height;
-
-    ctx.beginPath();
-    ctx.rect(x, y, boxWidth, boxHeight);
-    ctx.strokeStyle = "#a15ffb";
-    ctx.stroke();
-    ctx.closePath();
-  }
-}
-
-function drawLandmarks(detections) {
-  for (let i = 0; i < detections.length; i += 1) {
-    const mouth = detections[i].parts.mouth;
-    const nose = detections[i].parts.nose;
-    const leftEye = detections[i].parts.leftEye;
-    const rightEye = detections[i].parts.rightEye;
-    const rightEyeBrow = detections[i].parts.rightEyeBrow;
-    const leftEyeBrow = detections[i].parts.leftEyeBrow;
-
-    drawPart(mouth, true);
-    drawPart(nose, false);
-    drawPart(leftEye, true);
-    drawPart(leftEyeBrow, false);
-    drawPart(rightEye, true);
-    drawPart(rightEyeBrow, false);
-  }
-}
-
-function drawPart(feature, closed) {
-  ctx.beginPath();
-  for (let i = 0; i < feature.length; i += 1) {
-    const x = feature[i]._x;
-    const y = feature[i]._y;
-
-    if (i === 0) {
-      ctx.moveTo(x, y);
-    } else {
-      ctx.lineTo(x, y);
+// A function to draw the skeletons
+function drawSkeleton() {
+  // Loop through all the skeletons detected
+  for (let i = 0; i < poses.length; i += 1) {
+    const skeleton = poses[i].skeleton;
+    // For every skeleton, loop through all body connections
+    for (let j = 0; j < skeleton.length; j += 1) {
+      const partA = skeleton[j][0];
+      const partB = skeleton[j][1];
+      stroke(255, 255, 0);
+      line(partA.position.x, partA.position.y, partB.position.x, partB.position.y);
     }
   }
-
-  if (closed === true) {
-    ctx.closePath();
-  }
-  ctx.stroke();
-}
-
-// Helper Functions
-async function getVideo() {
-  // Grab elements, create settings, etc.
-  const videoElement = document.createElement("video");
-  videoElement.setAttribute("style", "display: none;");
-  videoElement.width = width;
-  videoElement.height = height;
-  document.body.appendChild(videoElement);
-
-  // Create a webcam capture
-  const capture = await navigator.mediaDevices.getUserMedia({ video: true });
-  videoElement.srcObject = capture;
-  videoElement.play();
-
-  return videoElement;
-}
-
-function createCanvas(w, h) {
-  const canvas = document.createElement("canvas");
-  canvas.width = w;
-  canvas.height = h;
-  document.body.appendChild(canvas);
-  return canvas;
 }

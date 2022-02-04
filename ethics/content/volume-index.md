@@ -1,2 +1,1 @@
-[Volume 1 – Surveillance & Privacy](./volume/one)
-[Volume 2 – Labour](./volume/two)
+[Saturday 26 March 2022 <br/> Volume 1: Surveillance & Privacy](./volume/one)
