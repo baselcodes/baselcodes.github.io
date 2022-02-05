@@ -12,11 +12,15 @@ let video;
 let poseNet;
 let poses = [];
 
+let vWidth = 480
+let vHeight = 360
+
 function setup() {
   let cnv = createCanvas(windowWidth, windowHeight);
   cnv.parent("sketch-container");
   video = createCapture(VIDEO);
-  video.size(640, 480);
+  console.log(video)
+  video.size(vWidth, vHeight);
 
   // Create a new poseNet method with a single detection
   poseNet = ml5.poseNet(video, modelReady);
@@ -36,8 +40,8 @@ function modelReady() {
 function draw() {
   // background(144, 121, 214);
   background(230)
-  translate((width/2 - 640/2), (height/2 - 480/2))
-  image(video, 0, 0, 640, 480);
+  translate((width/2 - vWidth/2), (height/2 - vHeight/2))
+  image(video, 0, 0, vWidth, vHeight);
 
   // We can call both functions to draw all keypoints and the skeletons
   drawKeypoints();
