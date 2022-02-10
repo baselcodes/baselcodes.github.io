@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta charset="utf-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="referrer" content="origin-when-cross-origin" />
+
+  <title>Ethics & Technology</title>
+  <meta name="description"
+    content="Ethics & Technology – A Series of Screenings and Discussion organized by basel.codes" />
+  <meta name="author" content="Basel Codes Community" />
+
+  <!-- Facebook -->
+  <meta property="og:url" content="http://basel.codes/ethics" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Ethics & Technology" />
+  <meta property="og:description"
+    content="Ethics & Technology – A Series of Screenings and Discussion organized by basel.codes" />
+  <meta property="og:image" content="https://basel.codes/og.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="Ethics & Technology" />
+  <meta name="twitter:creator" content="Ethics & Technology" />
+  <meta name="twitter:title" content="Ethics & Technology" />
+  <meta name="twitter:description" content="Ethics & Technology – A Series of Screenings and Discussion organized by basel.codes">
+		<meta name=" twitter:image" content="https://basel.codes/og.png" />
+
+  <link rel="stylesheet" type="text/css" media="screen" href="./ethics-css/ethics-styles.css" />
+  <link rel="icon" type="image/png" href="favicon-196x196.png" sizes="196x196" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
+  <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script> -->
+
+  <script src="./sketches/sketch-vol-1-consent.js"></script>
+
+</head>
+
+<body>
+  <div id="sketch-container"></div>
+
+  <div class="header">
+    <h1 class="type-l type-center break">Ethics & Technology</h1>
+    <p class="type-s purple type-center">A Series of Screenings and Discussions <br> organized by <a class="type-s" href="basel.codes" target="_blank">basel.codes</a></p>
+  </div>
+
+  <div class="panel">
+    <div id="intro-txt"></div>
+    <h3 class="type-l type-center">Upcoming <br> Issues</h3>
+    <div id="volume-index"></div>
+  </div>
+
+  <script>
+    fetch("./content/introduction.md")    // The path to the raw Markdown file
+      .then(response => response.blob())  // Unwrap to a blob...
+      .then(blob => blob.text())          // ...then to raw text...
+      .then(markdown => {                 // ...then pass the raw text into marked.parse
+        document.getElementById('intro-txt').innerHTML = marked.parse(markdown);
+      });
+
+      fetch("./content/volume-index.md")
+      .then(response => response.blob())
+      .then(blob => blob.text())
+      .then(markdown => {
+        document.getElementById('volume-index').innerHTML = marked.parse(markdown);
+      });
+  </script>
+
+
+</body>
