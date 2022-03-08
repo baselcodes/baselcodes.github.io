@@ -150,6 +150,39 @@ a:hover {
 
 }
 
+/* footer
+---------------------------------------------------- */
+.footer {
+  position: fixed;
+  bottom: 16px;
+  left: 8px; 
+  right: 8px; 
+}
+
+.footer p {
+  margin-left: 0%;
+  margin-right: 0%;
+  text-align: center;
+}
+
+@media (min-width: 768px){ 
+  .footer p {
+    margin-left: 25%;
+    margin-right: 25%;
+    text-align: center;
+  }
+}
+
+.footer a {
+  text-decoration: underline;
+}
+
+.footer a, .footer p {
+  font-size: 12px;
+  line-height: 16px;
+  color:rgb(144, 121, 214);
+  letter-spacing: 0;
+}
 
 /* sketch container
 ---------------------------------------------------- */
