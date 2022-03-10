@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="origin-when-cross-origin" />
+
+    <title>Ethics & Technology - Volume 2</title>
+    <meta name="description" content="Ethics & Technology - Volume 2 Humans, Machines and Labour April 22nd" />
+    <meta name="author" content="Basel Codes Community" />
+
+    <!-- Facebook -->
+    <meta property="og:url" content="http://basel.codes/ethics" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Ethics & Technology - Volume 2" />
+    <meta property="og:description" content="Ethics & Technology - Volume 2 Humans, Machines and Labour April 22nd" />
+    <meta property="og:image" content="https://basel.codes/img/ethics-og.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="Ethics & Technology - Volume 2" />
+    <meta name="twitter:creator" content="Ethics & Technology - Volume 2" />
+    <meta name="twitter:title" content="Ethics & Technology - Volume 2" />
+    <meta name="twitter:description" content="Ethics & Technology - Volume 2 Humans, Machines and Labour April 22nd">
+    <meta name=" twitter:image" content="https://basel.codes/img/ethics-og.png" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="../ethics-css/ethics-styles.css" />
+    <link rel="icon" type="image/png" href="favicon-196x196.png" sizes="196x196" />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <script src="../sketches/sketch-vol-2.js"></script>
+
+</head>
+
+<body>
+    <div id="sketch-container"></div>
+
+    <div class="header">
+        <h1 class="type-l type-center break"><a class="type-l" href="../index.html">Ethics & Technology</a> <br> Volume
+            2: Humans, Machines and Labour</h1>
+    </div>
+
+    <div class="panel">
+        <div id="volume-txt"></div>
+    </div>
+
+    <script>
+        fetch("../content/volume-2.md")    // The path to the raw Markdown file
+            .then(response => response.blob())  // Unwrap to a blob...
+            .then(blob => blob.text())          // ...then to raw text...
+            .then(markdown => {                 // ...then pass the raw text into marked.parse
+                document.getElementById('volume-txt').innerHTML = marked.parse(markdown);
+            });
+    </script>
+
+
+</body>

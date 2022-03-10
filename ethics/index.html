@@ -26,8 +26,9 @@
   <meta name="twitter:site" content="Ethics & Technology" />
   <meta name="twitter:creator" content="Ethics & Technology" />
   <meta name="twitter:title" content="Ethics & Technology" />
-  <meta name="twitter:description" content="Ethics & Technology – A Series of Screenings and Discussion organized by basel.codes">
-	<meta name=" twitter:image" content="https://basel.codes/img/ethics-og.png" />
+  <meta name="twitter:description"
+    content="Ethics & Technology – A Series of Screenings and Discussion organized by basel.codes">
+  <meta name=" twitter:image" content="https://basel.codes/img/ethics-og.png" />
 
   <link rel="stylesheet" type="text/css" media="screen" href="./ethics-css/ethics-styles.css" />
   <link rel="icon" type="image/png" href="favicon-196x196.png" sizes="196x196" />
@@ -45,7 +46,8 @@
 
   <div class="header">
     <h1 class="type-l type-center break">Ethics & Technology</h1>
-    <p class="type-s purple type-center">A Series of Screenings and Discussions <br> organized by <a class="type-s" href="basel.codes" target="_blank">basel.codes</a></p>
+    <p class="type-s purple type-center">A Series of Screenings and Discussions <br> organized by <a class="type-s"
+        href="basel.codes" target="_blank">basel.codes</a></p>
   </div>
 
   <div class="panel">
@@ -55,7 +57,9 @@
   </div>
 
   <div class="footer">
-    <p>Website by basel.codes and completely <a href="https://github.com/baselcodes/baselcodes.github.io" target="_blank">open-source</a>. We don't collect data in any kind about you and your loved ones. Font kindly provided by <a href="https://abcdinamo.com/" target="_blank">Dinamo</a></p>
+    <p>Website by basel.codes and completely <a href="https://github.com/baselcodes/baselcodes.github.io"
+        target="_blank">open-source</a>. We don't collect data in any kind about you and your loved ones. Font kindly
+      provided by <a href="https://abcdinamo.com/" target="_blank">Dinamo</a></p>
   </div>
 
   <script>
@@ -66,7 +70,7 @@
         document.getElementById('intro-txt').innerHTML = marked.parse(markdown);
       });
 
-      fetch("./content/volume-index.md")
+    fetch("./content/volume-index.md")
       .then(response => response.blob())
       .then(blob => blob.text())
       .then(markdown => {

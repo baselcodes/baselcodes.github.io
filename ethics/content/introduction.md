@@ -1,4 +1,4 @@
-This year [basel.codes](https://basel.codes) in collaboration with [Neues Kino](https://neueskinobasel.ch/) will organize a series of screenings that inquiry the collisions between ethics and technology.
+This year [basel.codes](https://basel.codes) in collaboration with [Neues Kino](https://neueskinobasel.ch/) and [Critical Media Lab](https://criticalmedialab.ch) will organize a series of screenings that inquiry the collisions between ethics and technology.
 
 In recent years we have seen the development and advancement of new and complex technologies that are coming under critical scrutiny because of their social implications.
 

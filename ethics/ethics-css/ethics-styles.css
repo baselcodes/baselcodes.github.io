@@ -17,6 +17,7 @@
   font-family: 'ginto-bold-it';
   src: url(../fonts/ABCGintoNord-BlackIta.woff);
 }
+
 /* resetting
 ---------------------------------------------------- */
 
@@ -50,7 +51,7 @@ body, h1, h2, h3, h4, p, span, a, li, ul {
 }
 
 /* iPad and bigger */
-@media (min-width: 768px){
+@media (min-width: 768px) {
   body, h1, h2, h3, h4, p, span, a, li, ul {
     color: #FFFF00;
     font-family: 'ginto-regular', Times;
@@ -84,7 +85,7 @@ body, h1, h2, h3, h4, p, span, a, li, ul {
 
 
 /* iPad and bigger */
-@media (min-width: 768px){
+@media (min-width: 768px) {
   .type-l, h1, h2 {
     font-family: 'ginto-bold', Helvetica;
     font-weight: 700;
@@ -105,6 +106,9 @@ body, h1, h2, h3, h4, p, span, a, li, ul {
 }
 
 a {
+  /* text-shadow: rgb(84, 61, 152) 3px 3px 0px; */
+  color: #33f;
+  font-family: 'ginto-bold', Helvetica;
   text-decoration: none;
 }
 
@@ -139,7 +143,7 @@ a:hover {
   padding-bottom: 10px;
 }
 
-@media (min-width: 768px){
+@media (min-width: 768px) {
   .header {
     margin-top: 48px;
   }
@@ -155,8 +159,8 @@ a:hover {
 .footer {
   position: fixed;
   bottom: 16px;
-  left: 8px; 
-  right: 8px; 
+  left: 8px;
+  right: 8px;
 }
 
 .footer p {
@@ -165,7 +169,7 @@ a:hover {
   text-align: center;
 }
 
-@media (min-width: 768px){ 
+@media (min-width: 768px) {
   .footer p {
     margin-left: 25%;
     margin-right: 25%;
@@ -180,7 +184,7 @@ a:hover {
 .footer a, .footer p {
   font-size: 12px;
   line-height: 16px;
-  color:rgb(144, 121, 214);
+  color: rgb(144, 121, 214);
   letter-spacing: 0;
 }
 
@@ -192,7 +196,7 @@ a:hover {
   width: 100%;
   height: 100vh;
   left: 0;
-  right: 0; 
+  right: 0;
   top: 0;
   bottom: 0;
 }
@@ -213,7 +217,7 @@ a:hover {
   border-radius: 20px;
 }
 
-@media (min-width: 768px){
+@media (min-width: 768px) {
   .panel {
     margin-top: 80vh;
     margin-left: 80px;
@@ -272,13 +276,10 @@ a:hover {
 
 /* canvas
 ---------------------------------------------------- */
-canvas{
+canvas {
   cursor: help;
 }
 
 
 /* footer
 ---------------------------------------------------- */
-
-
-
