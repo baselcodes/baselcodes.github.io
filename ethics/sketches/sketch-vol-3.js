@@ -1,7 +1,8 @@
 var grid;
 
 function setup () {
-  createCanvas(windowWidth, windowWidth);
+  let cnv = createCanvas(windowWidth, windowWidth);
+  cnv.parent("sketch-container");
   grid = new Grid(20);
   grid.randomize();
 

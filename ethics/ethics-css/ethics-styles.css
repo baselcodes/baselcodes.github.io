@@ -277,7 +277,7 @@ a:hover {
 /* canvas
 ---------------------------------------------------- */
 canvas {
-  cursor: help;
+  /* cursor: help; */
 }
 
 

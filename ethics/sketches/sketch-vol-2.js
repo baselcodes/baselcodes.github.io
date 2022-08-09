@@ -837,11 +837,11 @@ window.onmousemove = (e) => {
   console.log(index)
   pre.textContent = animation[index]
 }
-// setInterval(() => {
-//   index++
+setInterval(() => {
+  index++
 
-//   pre.textContent = animation[index]
-//   if (index >= animation.length - 1) {
-//     index = 0
-//   }
-// }, 75)
+  pre.textContent = animation[index]
+  if (index >= animation.length - 1) {
+    index = 0
+  }
+}, 75)
