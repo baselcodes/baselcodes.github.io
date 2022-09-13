@@ -107,13 +107,18 @@ body, h1, h2, h3, h4, p, span, a, li, ul {
 
 a {
   /* text-shadow: rgb(84, 61, 152) 3px 3px 0px; */
-  color: #33f;
-  font-family: 'ginto-bold', Helvetica;
-  text-decoration: none;
+  /* color: #33f; */
+  /* font-family: 'ginto-bold', Helvetica; */
+  text-decoration: underline;
+  transition: 0.3s;
 }
 
 a:hover {
+  transition: 0.3s;
+  text-shadow: rgb(84, 61, 152) 8px 10px 0px;
+
   text-decoration: underline;
+  color: rgb(255, 255, 255);
 }
 
 /* colors
@@ -213,7 +218,7 @@ a:hover {
   margin-bottom: 75px;
   padding: 15px 18px;
   background-color: #EFEFEF;
-  background: rgba(144, 121, 214, 0.90);
+  background: rgba(144, 121, 214, 1);
   border-radius: 20px;
 }
 
@@ -224,6 +229,7 @@ a:hover {
     margin-right: 80px;
     margin-bottom: 75px;
     padding: 28px 32px;
+    padding-bottom: 18px;
     border-radius: 30px;
   }
 }
@@ -266,8 +272,8 @@ a:hover {
   border-radius: 30px;
 }
 
-.panel #volume-txt p {
-  padding-bottom: 21px;
+.panel #volume-txt h1, .panel #volume-txt h2, .panel #volume-txt h3, .panel #volume-txt p, .panel #volume-txt ul {
+  padding-bottom: 36px;
 }
 
 .panel #volume-txt li {

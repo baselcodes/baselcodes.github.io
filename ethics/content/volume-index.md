@@ -2,4 +2,4 @@
 [Friday April 22nd 2022 <br/> Volume 2: Humans, Machines and Labour](./volume/two.html)
 [Friday May 28th 2022 <br/> Volume 3: Artificial Intelligence](./volume/three.html)
 [Satuday June 25th 2022 <br/> Volume 4: All Light, Everywhere](./volume/four.html)
-[Satuday September 24th 2022 <br/> Volume 5: Resistance](./volume/five.html)
+[Satuday September 24th 2022 <br/> Volume 5: Resistance (w/ free workshop!)](./volume/five.html)
