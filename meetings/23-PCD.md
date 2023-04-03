@@ -1,10 +1,11 @@
-# 23-XX-XX PCD 2023
+# 23-05-21 PCD 2023
 
 ## Meeting agenda
 
 - A quick round where everybody can say how he/she would like to contribute / the amount of involvement (see below)
 - A ruff outline of the event structure
 - A potential series of event dates
+  - livecoding party on 17.11 as part of the BuchBasel festival
 - Next steps / responsibilities and a next meeting date
 
 ## Potential things to get involved
