@@ -7,12 +7,7 @@ import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
 var renderer = new THREE.WebGLRenderer({antialias:true});
 renderer.setSize( window.innerWidth, window.innerHeight );
 THREE.Cache.enabled = true;
-if (window.innerWidth > 800) {
-  renderer.shadowMap.enabled = true;
-  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-  renderer.shadowMap.needsUpdate = true;
 
-};
 document.querySelector('#threejs').appendChild(renderer.domElement);
 window.addEventListener('resize', onWindowResize, false);
 
@@ -25,17 +20,16 @@ function onWindowResize() {
 var camera = new THREE.PerspectiveCamera( 20, window.innerWidth / window.innerHeight, 1, 500 );
 camera.position.set(0, 10, 20);
 
-
 var scene = new THREE.Scene();
 var city = new THREE.Object3D();
 var town = new THREE.Object3D();
 var group = new THREE.Group();
-var dictionary = "0123456789qwertyuiopasdfghjklzxcvbnm!?></\a`~+*=@#$%".split('');
 
 var linePos = true;
-var uSpeed = 0.001;
+var uSpeed = 0.002;
 var textSize = 0;
 let bcd = 'BASEL CODES DAY'
+var scaleFactor = 0.0007;
 
 var group, textMesh, textGeo, textMaterials,font;;
 let fontName = 'Kollektif_Bold'
@@ -56,10 +50,6 @@ function mathRandomBetween(min = 8, max = 10) {
   return Math.floor(Math.random() * (max - min + 1) + min)
 };
 
-//----------------------------------------------------------------- REMAP Function
-function remap(value, low1, high1, low2, high2) {
-  return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
-}
 //----------------------------------------------------------------- GENERATE City
 
 function init() {
@@ -137,21 +127,22 @@ function onMouseMove(event) {
   event.preventDefault();
   mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
   mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
- 
+
 };
 function onDocumentTouchStart( event ) {
   if ( event.touches.length == 1 ) {
     event.preventDefault();
-    mouse.x = event.touches[ 0 ].pageX -  window.innerWidth / 2;
-    mouse.y = event.touches[ 0 ].pageY - window.innerHeight / 2;
+    mouse.x = (event.touches[ 0 ].clientX / window.innerWidth) * 2 - 1;
+    mouse.y = -(event.touches[ 0 ].clientY / window.innerHeight) * 2 + 1;
   };
 };
+
 
 function onDocumentTouchMove( event ) {
   if ( event.touches.length == 1 ) {
     event.preventDefault();
-    mouse.x = event.touches[ 0 ].pageX -  window.innerWidth / 2;
-    mouse.y = event.touches[ 0 ].pageY - window.innerHeight / 2;
+    mouse.x = (event.touches[ 0 ].clientX / window.innerWidth) * 2 - 1;
+    mouse.y = -(event.touches[ 0 ].clientY / window.innerHeight) * 2 + 1;
   }
 }
 
@@ -162,9 +153,9 @@ function onMouseClick(event){
   };
 }
 
-window.addEventListener('mousemove', onMouseMove, false);
-window.addEventListener('touchstart', onDocumentTouchStart, false );
-window.addEventListener('touchmove', onDocumentTouchMove, false );
+document.addEventListener('mousemove', onMouseMove, { passive: false });
+document.addEventListener('touchstart', onDocumentTouchStart, { passive: false } );
+document.addEventListener('touchmove', onDocumentTouchMove,{ passive: false });
 
 //----------------------------------------------------------------- GENERATE Lights
 var ambientLight = new THREE.AmbientLight(0x0FFFF, 4);
@@ -218,7 +209,7 @@ function loadFont() {
 function createText(text) {
   textGeo = new TextGeometry( text, {
     font: font,
-    size:  window.innerWidth * 0.0007,
+    size:  window.innerWidth * scaleFactor,
     height: 0.3,
     curveSegments: 2,
 
@@ -253,15 +244,19 @@ function createBasel(textMesh) {
 //----------------------------------------------------------------- ANIMATE
 
 var animate = function() {
-
   var time = Date.now() * 0.0002;
   requestAnimationFrame(animate);
-  city.rotation.y -= ((mouse.x) - camera.rotation.y) * uSpeed;
-  city.rotation.x -= (-(mouse.y ) - camera.rotation.x) * uSpeed ;
- 
-  if (city.rotation.x < -0.3) city.rotation.x = -0.3;
-  else if (city.rotation.x > 1) city.rotation.x = 1;
+  city.rotation.y -= mouse.x * uSpeed;
+  city.rotation.x -= -(mouse.y) * uSpeed ;
 
+  if (city.rotation.y < -0.2) city.rotation.y = -0.2;
+  else if (city.rotation.y > 0.2) city.rotation.y = 0.2;
+
+  if (city.rotation.x < -0.2) city.rotation.x = -0.2;
+  else if (city.rotation.x> 0.2) city.rotation.x = 0.2;
+
+
+  console.log(city.rotation.x)
   group.position.x -= -mouse.x  * 0.01;
   if (group.position.x  > textSize) group.position.x = textSize; 
   if (group.position.x  < -textSize) group.position.x = -textSize;
@@ -272,8 +267,18 @@ var animate = function() {
     if (object instanceof THREE.Mesh) {
       object.scale.y = (i+1) * 0.05 * Math.sin(time  + object.position.x * 0.25 + object.position.z * 0.25 );
     };
-
   };
+
+  if (window.innerWidth > 800) {
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    renderer.shadowMap.needsUpdate = true;
+    scaleFactor = 0.0007;
+  }else {
+    scaleFactor = 0.001;
+  }
+
+  
   camera.lookAt(city.position);
   renderer.clear();
   renderer.render( scene, camera );  
