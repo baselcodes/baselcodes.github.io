@@ -23,53 +23,22 @@ function onWindowResize() {
 };
 
 var camera = new THREE.PerspectiveCamera( 20, window.innerWidth / window.innerHeight, 1, 500 );
-camera.position.set(5, 10, 20);
+camera.position.set(0, 10, 20);
 
 
 var scene = new THREE.Scene();
 var city = new THREE.Object3D();
 var town = new THREE.Object3D();
+var group = new THREE.Group();
+var dictionary = "0123456789qwertyuiopasdfghjklzxcvbnm!?></\a`~+*=@#$%".split('');
 
-var createCarPos = true;
+var linePos = true;
 var uSpeed = 0.001;
+var textSize = 0;
+let bcd = 'BASEL CODES DAY'
 
 var group, textMesh, textGeo, textMaterials,font;;
 let fontName = 'Kollektif_Bold'
-
-
-function loadFont() {
-  const loader = new FontLoader();
-  loader.load( 'font/' + fontName + '.json', function ( response ) {
-    font = response;
-    createText('BASEL CODES DAY');
-  } );
-}
-
-function createText(text) {
-  textGeo = new TextGeometry( text, {
-    font: font,
-    size:  window.innerWidth * 0.001,
-    height: 0.3,
-    curveSegments: 4,
-    bevelThickness: 2,
-    bevelSize: 1,
-    bevelEnabled: false
-  } );
-
-  textGeo.computeBoundingBox();
- 
-  textMaterials = [
-    new THREE.MeshPhongMaterial( { color: 0x00000, flatShading:false,  wireframe:true} ), // front
-    new THREE.MeshPhongMaterial( { color: 0x00000 } ) // side
-  ];
-
-  const centerOffset = - 0.5 * (textGeo.boundingBox.max.x - textGeo.boundingBox.min.x );
-  textMesh = new THREE.Mesh(textGeo, textMaterials);
-  textMesh.position.x = centerOffset;
-  textMesh.position.y = 0;
-  textMesh.position.z = 0;
-  createBasel(textGeo.boundingBox.max.x, textMesh);
-}
 
 //----------------------------------------------------------------- FOG background
 var setcolor = 0x3F33FF;
@@ -91,10 +60,10 @@ function mathRandomBetween(min = 8, max = 10) {
 function remap(value, low1, high1, low2, high2) {
   return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
 }
-//----------------------------------------------------------------- CREATE City
+//----------------------------------------------------------------- GENERATE City
 
 function init() {
-  var segments = 3;
+  var segments = 2;
   for (var i = 1; i<50; i++) {
   var geometry = new THREE.BoxGeometry(1,1,1,segments,segments,segments);
    var material = new THREE.MeshStandardMaterial({
@@ -120,12 +89,12 @@ function init() {
     cube.position.x = Math.round(mathRandom());
     cube.position.z = Math.round(mathRandom());
     
-    floor.position.set(cube.position.x, 0/*floor.scale.y / 2*/, cube.position.z)
+    floor.position.set(cube.position.x, 0, cube.position.z)
     
     town.add(floor);
     town.add(cube);
   };
-  //----------------------------------------------------------------- Floor
+  //----------------------------------------------------------------- GENERATE Floor
   
   var pmaterial = new THREE.MeshPhongMaterial({
     color:0x00000,
@@ -150,9 +119,11 @@ function init() {
   pelement.rotation.x = -90 * Math.PI / 180;
   pelement.position.y = -0.001;
   pelement.receiveShadow = true;
+
   pelement2.rotation.x = -90 * Math.PI / 180;
   pelement2.position.y = -0.001;
   pelement2.receiveShadow = true;
+
   city.add(pelement);
   city.add(pelement2);
 };
@@ -195,7 +166,7 @@ window.addEventListener('mousemove', onMouseMove, false);
 window.addEventListener('touchstart', onDocumentTouchStart, false );
 window.addEventListener('touchmove', onDocumentTouchMove, false );
 
-//----------------------------------------------------------------- Lights
+//----------------------------------------------------------------- GENERATE Lights
 var ambientLight = new THREE.AmbientLight(0x0FFFF, 4);
 ambientLight.position.set(0,6,0);
 
@@ -203,62 +174,99 @@ scene.add(ambientLight);
 city.add(town);
 scene.add(city);
 
-//----------------------------------------------------------------- Moving Lines
+//----------------------------------------------------------------- GENRATE Moving Lines
 
 var createLines = function(cScale = 2, cPos = 20) {
   var cMat = new THREE.MeshToonMaterial({color:0x52FF33, side:THREE.DoubleSide});
   var cGeo = new THREE.BoxGeometry(mathRandomBetween(1,5), cScale/mathRandomBetween(20,50), cScale/ mathRandomBetween(20,50));
-  var cElem = new THREE.Mesh(cGeo, cMat);
+  var lineElement = new THREE.Mesh(cGeo, cMat);
   var cAmp = 2;
   
-  if (createCarPos) {
-    createCarPos = false;
-    cElem.position.x = -cPos;
-    cElem.position.z = (mathRandom(cAmp));
-    TweenMax.to(cElem.position, 3, {x:cPos, repeat:-1, yoyo:true, delay:mathRandom(3)});
+  if (linePos) {
+    linePos = false;
+    lineElement.position.x = -cPos;
+    lineElement.position.z = (mathRandom(cAmp));
+    TweenMax.to(lineElement.position, 3, {x:cPos, repeat:-1, yoyo:true, delay:mathRandom(3)});
   } else {
-    createCarPos = true;
-    cElem.position.x = (mathRandom(cAmp));
-    cElem.position.z = -cPos;
-    cElem.rotation.y = 90 * Math.PI / 180;
-    TweenMax.to(cElem.position, 5, {z:cPos, repeat:-1, yoyo:true, delay:mathRandom(3), ease:Power1.easeInOut});
+    linePos = true;
+    lineElement.position.x = (mathRandom(cAmp));
+    lineElement.position.z = -cPos;
+    lineElement.rotation.y = 90 * Math.PI / 180;
+    TweenMax.to(lineElement.position, 5, {z:cPos, repeat:-1, yoyo:true, delay:mathRandom(3), ease:Power1.easeInOut});
   };
 
-  cElem.receiveShadow = true;
-  cElem.castShadow = true;
-  cElem.position.y = Math.abs(mathRandom(5));
-  city.add(cElem);
+  lineElement.position.y = Math.abs(mathRandom(5));
+  city.add(lineElement);
 };
 
 function generateLines() {
   for (var i = 0; i < 40; i++) {
     createLines(0.2, 20);
   };
-
 };
+//----------------------------------------------------------------- CREATE TEXT
 
-function createBasel(bPos, textMesh) {
-  group = new THREE.Group();
-  group.position.x = bPos;
-  group.position.z = 0
-  TweenMax.to(group.position, 50, {x:-bPos,repeat:-1, yoyo:true});
-  group.position.y = mathRandomBetween(1,2);
+function loadFont() {
+  const loader = new FontLoader();
+  loader.load( 'font/' + fontName + '.json', function ( response ) {
+    font = response;
+    createText(bcd);
+  } );
+}
+
+
+function createText(text) {
+  textGeo = new TextGeometry( text, {
+    font: font,
+    size:  window.innerWidth * 0.0007,
+    height: 0.3,
+    curveSegments: 2,
+
+  } );
+
+  textGeo.computeBoundingBox();
+ 
+  textMaterials = [
+    new THREE.MeshStandardMaterial( { color: 0x000000,wireframe:false} ), // front
+    new THREE.MeshStandardMaterial( { color: 0x52FF33,wireframe:true, roughness:0} ) // side
+  ];
+
+  const centerOffset = - 0.5 * (textGeo.boundingBox.max.x - textGeo.boundingBox.min.x );
+  textMesh = new THREE.Mesh(textGeo, textMaterials);
+  textMesh.position.x = centerOffset;
+  textMesh.position.y = 0;
+  textMesh.position.z = 0;
+  textSize = textGeo.boundingBox.max.x
+  createBasel(textMesh);
+}
+
+function createBasel(textMesh) {
+  group.position.x = 0;
+  group.position.y = 1
+  group.position.z = mathRandomBetween(-3,1);
+
+ //TweenMax.to(group.position, 50, {x:-bPos,repeat:-1, yoyo:true});
   group.add(textMesh);
   city.add(group);
 }
+
 //----------------------------------------------------------------- ANIMATE
 
 var animate = function() {
 
   var time = Date.now() * 0.0002;
   requestAnimationFrame(animate);
-  city.rotation.y -= ((mouse.x ) - camera.rotation.y) * uSpeed;
-  city.rotation.x -= (-(mouse.y ) - camera.rotation.x) * uSpeed;
+  city.rotation.y -= ((mouse.x) - camera.rotation.y) * uSpeed;
+  city.rotation.x -= (-(mouse.y ) - camera.rotation.x) * uSpeed ;
  
-  if (city.rotation.x < -0.05) city.rotation.x = -0.05;
-  else if (city.rotation.x>1) city.rotation.x = 1;
-  
-  //loop through all objects in the town
+  if (city.rotation.x < -0.3) city.rotation.x = -0.3;
+  else if (city.rotation.x > 1) city.rotation.x = 1;
+
+  group.position.x -= -mouse.x  * 0.01;
+  if (group.position.x  > textSize) group.position.x = textSize; 
+  if (group.position.x  < -textSize) group.position.x = -textSize;
+
+  //loop through all objects in the town and rotate them
   for (var i = 0; i < town.children.length; i++) {
     var object = town.children[i];
     if (object instanceof THREE.Mesh) {
@@ -276,5 +284,4 @@ loadFont();
 init();
 generateLines();
 animate(); 
-
 
