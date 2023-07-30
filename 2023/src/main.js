@@ -249,8 +249,8 @@ var animate = function() {
   city.rotation.y -= mouse.x * uSpeed;
   city.rotation.x -= -(mouse.y) * uSpeed ;
 
-  if (city.rotation.y < -0.2) city.rotation.y = -0.2;
-  else if (city.rotation.y > 0.2) city.rotation.y = 0.2;
+  if (city.rotation.y < -0.5) city.rotation.y = -0.5;
+  else if (city.rotation.y > 0.5) city.rotation.y = 0.5;
 
   if (city.rotation.x < -0.2) city.rotation.x = -0.2;
   else if (city.rotation.x> 0.2) city.rotation.x = 0.2;
