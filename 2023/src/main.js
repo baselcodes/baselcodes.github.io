@@ -255,8 +255,7 @@ var animate = function() {
   if (city.rotation.x < -0.2) city.rotation.x = -0.2;
   else if (city.rotation.x> 0.2) city.rotation.x = 0.2;
 
-
-  console.log(city.rotation.x)
+  //console.log(city.rotation.x)
   group.position.x -= -mouse.x  * 0.01;
   if (group.position.x  > textSize) group.position.x = textSize; 
   if (group.position.x  < -textSize) group.position.x = -textSize;
