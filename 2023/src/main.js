@@ -10,7 +10,7 @@ renderer.setSize( window.innerWidth, window.innerHeight );
 THREE.Cache.enabled = true;
 
 document.querySelector('#threejs').appendChild(renderer.domElement);
-document.querySelector('#threejs').addEventListener('touchstart', (e) => {
+document.querySelector('#hack').addEventListener('touchstart', (e) => {
   e.preventDefault();
 });
 
