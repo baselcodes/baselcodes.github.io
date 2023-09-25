@@ -14,6 +14,16 @@ document.querySelector('#threejs').addEventListener('touchstart', (e) => {
   e.preventDefault();
 });
 
+document.querySelectorAll('a').forEach((elem) => {
+  elem.addEventListener('touchstart', stopPropagation);
+  elem.addEventListener('touchmove', stopPropagation);
+  elem.addEventListener('touchend', stopPropagation);
+});
+
+function stopPropagation(e) {
+  e.stopPropagation();
+}
+
 window.addEventListener('resize', onWindowResize, false);
 function onWindowResize() {
   camera.aspect = window.innerWidth / window.innerHeight;
