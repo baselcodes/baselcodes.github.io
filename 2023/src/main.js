@@ -2,8 +2,7 @@ import * as THREE from "three";
 import { FontLoader } from 'three/addons/loaders/FontLoader.js';
 import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
 
-// Three JS Template
-//----------------------------------------------------------------- BASIC parameters
+//---- BASIC parameters
 var renderer = new THREE.WebGLRenderer({antialias:true});
 renderer.setSize( window.innerWidth, window.innerHeight );
 THREE.Cache.enabled = true;
@@ -34,91 +33,22 @@ var scaleFactor = 0.0007;
 var group, textMesh, textGeo, textMaterials,font;;
 let fontName = 'Kollektif_Bold'
 
-//----------------------------------------------------------------- FOG background
+//--- FOG background
 var setcolor = 0x3F33FF;
 scene.background = new THREE.Color(setcolor);
 scene.fog = new THREE.Fog(setcolor, 10, 35);
 
-//----------------------------------------------------------------- RANDOM Function
+//--- RANDOM Functions
 function mathRandom(num = 8) {
   var numValue = - Math.random() * num + Math.random() * num;
   return numValue;
 };
 
-//----------------------------------------------------------------- RANDOM Function
 function mathRandomBetween(min = 8, max = 10) {
   return Math.floor(Math.random() * (max - min + 1) + min)
 };
 
-//----------------------------------------------------------------- GENERATE City
-
-function init() {
-  var segments = 2;
-  for (var i = 1; i<50; i++) {
-  var geometry = new THREE.BoxGeometry(1,1,1,segments,segments,segments);
-   var material = new THREE.MeshStandardMaterial({
-      color:0x00000,
-      wireframe:false,
-      metalness: 1,
-      shading: THREE.SmoothShading,
-      side:THREE.DoubleSide}); 
-   
-    var cube = new THREE.Mesh(geometry, material);
-    var floor = new THREE.Mesh(geometry, material);
-   
-    cube.add(floor);
-    cube.castShadow = true;
-    cube.receiveShadow = true;
-    cube.rotationValue = 0.1+Math.abs(mathRandom(8));
-    
-    floor.scale.x = floor.scale.z = 1+mathRandom(0.33);
-    cube.scale.y = 0.1+Math.abs(mathRandom(8));
- 
-    var cubeWidth = 0.9;
-    cube.scale.x = cube.scale.z = cubeWidth+mathRandom(1-cubeWidth);
-    cube.position.x = Math.round(mathRandom());
-    cube.position.z = Math.round(mathRandom());
-    
-    floor.position.set(cube.position.x, 0, cube.position.z)
-    
-    town.add(floor);
-    town.add(cube);
-  };
-  //----------------------------------------------------------------- GENERATE Floor
-  
-  var pmaterial = new THREE.MeshPhongMaterial({
-    color:0x00000,
-    side:THREE.DoubleSide,
-    wireframe:true,
-    opacity:1,
-    transparent:true});
-
-    var pmaterial2 = new THREE.MeshPhongMaterial({
-        color:0x00000,
-        side:THREE.DoubleSide,
-        wireframe:false,
-        opacity:0.9,
-        transparent:true});
-  
-  var pgeometry = new THREE.PlaneGeometry(60,60, 100, 100);
-  var pelement = new THREE.Mesh(pgeometry, pmaterial);
- 
-  var pgeometry2 = new THREE.PlaneGeometry(60,60, 100, 100);
-  var pelement2 = new THREE.Mesh(pgeometry2, pmaterial2);
- 
-  pelement.rotation.x = -90 * Math.PI / 180;
-  pelement.position.y = -0.001;
-  pelement.receiveShadow = true;
-
-  pelement2.rotation.x = -90 * Math.PI / 180;
-  pelement2.position.y = -0.001;
-  pelement2.receiveShadow = true;
-
-  city.add(pelement);
-  city.add(pelement2);
-};
-
-//----------------------------------------------------------------- MOUSE function
+//--- MOUSE functions
 var raycaster = new THREE.Raycaster();
 var mouse = new THREE.Vector2(), INTERSECTED;
 var intersected;
@@ -146,18 +76,11 @@ function onDocumentTouchMove( event ) {
   }
 }
 
-function onMouseClick(event){
-  for ( let i = 0, l = town.children.length; i < l; i ++ ) {
-    var object = town.children[ i ];
-    intersected = raycaster.intersectObjects(object);
-  };
-}
-
 document.addEventListener('mousemove', onMouseMove, { passive: false });
 document.addEventListener('touchstart', onDocumentTouchStart, { passive: false } );
 document.addEventListener('touchmove', onDocumentTouchMove,{ passive: false });
 
-//----------------------------------------------------------------- GENERATE Lights
+//--- LIGHTS
 var ambientLight = new THREE.AmbientLight(0x0FFFF, 4);
 ambientLight.position.set(0,6,0);
 
@@ -165,14 +88,71 @@ scene.add(ambientLight);
 city.add(town);
 scene.add(city);
 
-//----------------------------------------------------------------- GENRATE Moving Lines
+//--- CITY
+function init() {
+  var segments = 2;
+  for (var i = 1; i < 70; i++) {
+  var building = new THREE.BoxGeometry(1,1.5,1,segments,segments,segments);
+  var material = new THREE.MeshStandardMaterial({
+      color:0x00000,
+      metalness: 1,
+      shading: THREE.SmoothShading,
+      side:THREE.DoubleSide}); 
+   
+    var cube = new THREE.Mesh(building, material);
 
+    cube.castShadow = true;
+    cube.receiveShadow = true;
+    cube.rotationValue = 0.1+Math.abs(mathRandom(8));
+    
+    var cubeWidth = 0.9;
+    cube.scale.y = Math.abs(mathRandom(100));
+    cube.scale.x = cube.scale.z = cubeWidth + mathRandom(1-cubeWidth);
+    cube.position.x = Math.round(mathRandom());
+    cube.position.z = Math.round(mathRandom());
+    town.add(cube);
+  };
+
+  //--- FLOOR
+  var f_wire_material = new THREE.MeshPhongMaterial({
+    color:0x52FF33,
+    side:THREE.DoubleSide,
+    wireframe:true,
+    opacity:0.1,
+    transparent:true});
+
+  var f_material = new THREE.MeshPhongMaterial({
+    color:0x00000,
+    side:THREE.DoubleSide,
+    wireframe:false,
+    opacity:0.9,
+    transparent:true});
+  
+  var fgeometry = new THREE.PlaneGeometry(60,60, 100, 100);
+  var felement = new THREE.Mesh(fgeometry, f_material);
+ 
+  var f_wire_geometry = new THREE.PlaneGeometry(60,60, 100, 100);
+  var f_wire_element = new THREE.Mesh(f_wire_geometry, f_wire_material);
+ 
+  felement.rotation.x = -90 * Math.PI / 180;
+  felement.position.y = -0.001;
+  felement.receiveShadow = true;
+
+  f_wire_element.rotation.x = -90 * Math.PI / 180;
+  f_wire_element.position.y = -0.001;
+  f_wire_element.receiveShadow = true;
+
+  city.add(felement);
+  city.add(f_wire_element);
+};
+
+//--- MOVING LINES
 var createLines = function(cScale = 2, cPos = 20) {
-  var cMat = new THREE.MeshToonMaterial({color:0x52FF33, side:THREE.DoubleSide});
-  var cGeo = new THREE.BoxGeometry(mathRandomBetween(1,5), cScale/mathRandomBetween(20,50), cScale/ mathRandomBetween(20,50));
+  var cMat = new THREE.MeshBasicMaterial({color:0x52FF33, side:THREE.DoubleSide});
+  var cGeo = new THREE.BoxGeometry(mathRandomBetween(1,5), cScale/mathRandomBetween(20,50), cScale/mathRandomBetween(20,50));
   var lineElement = new THREE.Mesh(cGeo, cMat);
   var cAmp = 2;
-  
+
   if (linePos) {
     linePos = false;
     lineElement.position.x = -cPos;
@@ -188,6 +168,7 @@ var createLines = function(cScale = 2, cPos = 20) {
 
   lineElement.position.y = Math.abs(mathRandom(5));
   city.add(lineElement);
+
 };
 
 function generateLines() {
@@ -195,7 +176,7 @@ function generateLines() {
     createLines(0.2, 20);
   };
 };
-//----------------------------------------------------------------- CREATE TEXT
+//--- TEXT
 
 function loadFont() {
   const loader = new FontLoader();
@@ -235,13 +216,11 @@ function createBasel(textMesh) {
   group.position.x = 0;
   group.position.y = 1
   group.position.z = mathRandomBetween(-3,1);
-
- //TweenMax.to(group.position, 50, {x:-bPos,repeat:-1, yoyo:true});
   group.add(textMesh);
   city.add(group);
 }
 
-//----------------------------------------------------------------- ANIMATE
+//--- ANIMATE
 
 var animate = function() {
   var time = Date.now() * 0.0002;
@@ -260,7 +239,6 @@ var animate = function() {
   if (group.position.x  > textSize) group.position.x = textSize; 
   if (group.position.x  < -textSize) group.position.x = -textSize;
 
-  //loop through all objects in the town and rotate them
   for (var i = 0; i < town.children.length; i++) {
     var object = town.children[i];
     if (object instanceof THREE.Mesh) {
@@ -283,7 +261,7 @@ var animate = function() {
   renderer.render( scene, camera );  
 }
 
-//----------------------------------------------------------------- START functions
+//--- START 
 loadFont();
 init();
 generateLines();

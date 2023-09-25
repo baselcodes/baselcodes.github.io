@@ -27,19 +27,6 @@
 		/>
 		<!-- <meta property="og:image" content="https://basel.codes/2021/og2021.png" /> -->
 
-		<!-- Twitter -->
-		<meta name="twitter:card" content="summary" />
-		<meta name="twitter:site" content="basel.codes" />
-		<meta name="twitter:creator" content="basel.codes" />
-		<meta
-			name="twitter:title"
-			content="basel.codes // Basel Codes day // 13. Nov. 2021"
-		/>
-		<meta
-			name="twitter:description"
-			content="basel.codes presents the Basel Codes Day (BCD) 2023. A full day of talks, workshops, live music and coding. Come by and say 👋"
-		/>
-		<!-- <meta name="twitter:image" content="https://basel.codes/2023/og2023.png" /> -->
 		<link
 		href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
 		rel="stylesheet"
@@ -54,40 +41,38 @@
 			href="style2023.css"
 		/>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+		<script src="./src/hackerText.js"></script>
+		<script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+		<script type="importmap">
+		{
+			"imports": {
+			"three": "https://unpkg.com/three@0.152.2/build/three.module.js",
+			"three/addons/": "https://unpkg.com/three@0.152.2/examples/jsm/",
+			"@tweenjs/tween.js": "https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.esm.js"
+
+			}
+		}
+	</script>
 	</head>
 
 	<body>
 		<div id='threejs'>
 			<div class="container-fluid mx-auto text-center">
-				<div class="row">
-					<!-- INTRO TEXT -->
-					<div class="col-12 col-md-8 offset-md-2 program-row space-b">
-						<p>
-							<a href="https://basel.codes" target="_blank">basel.codes</a>
-							cordially invites you to the first Basel Codes Day. A
-							free, one-day event to celebrate art, code and diversity. We warmly
-							welcome all people who are interested in using code for creative and
-							experimental projects.
-						</p>
-						<br />
-						<a href="https://basel.codes" class="opencall" target="_blank">OPEN CALL </a>
+				<div class="row" >
+					<div class="col-12 col-md-8 offset-md-2" id="hack">
+						<p ><a href="https://basel.codes" target="_blank">basel.codes</a>
+							cordially invites you to the first Basel Codes Day on the 11.11.23. We warmly welcome all people who are interested in using code for creative and
+							experimental projects. Please apply using the link below or just join us for a day full of talks, workshops, and performances. </p>
+						<br/>
+						<a href="https://docs.google.com/forms/d/e/1FAIpQLSdS_T8fPfPU4YqWIX297zVlE-fq7hfSG3WKMMQYk3TRx0dciw/viewform" class="opencall" target="_blank">OPEN CALL </a>
 						<br />
 					</div>
 		</div>
 
 		
-
-	<script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
-  	<script type="importmap">
-      {
-        "imports": {
-          "three": "https://unpkg.com/three@0.152.2/build/three.module.js",
-          "three/addons/": "https://unpkg.com/three@0.152.2/examples/jsm/",
-          "@tweenjs/tween.js": "https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.esm.js"
-
-        }
-      }
+<script type="module" src="./src/main.js"> </script>
+<script>
+Init(document.getElementById("hack"), 2, 5);
 </script>
-<script type="module" src="./src/main.js"></script>
-	</body>
+</body>
 </html>
