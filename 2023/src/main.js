@@ -2,14 +2,19 @@ import * as THREE from "three";
 import { FontLoader } from 'three/addons/loaders/FontLoader.js';
 import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
 
+
+
 //---- BASIC parameters
 var renderer = new THREE.WebGLRenderer({antialias:true});
 renderer.setSize( window.innerWidth, window.innerHeight );
 THREE.Cache.enabled = true;
 
 document.querySelector('#threejs').appendChild(renderer.domElement);
-window.addEventListener('resize', onWindowResize, false);
+document.querySelector('#threejs').addEventListener('touchstart', (e) => {
+  e.preventDefault();
+});
 
+window.addEventListener('resize', onWindowResize, false);
 function onWindowResize() {
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
