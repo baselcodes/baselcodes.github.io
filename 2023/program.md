@@ -29,7 +29,7 @@ Music
 - Mark (?)
 
 Visuals
-- Alper
+- Alper (Live Tattooing with generated motives)
 - Sony
 - Paulina
 - Ted
