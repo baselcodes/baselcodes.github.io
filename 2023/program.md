@@ -1,15 +1,16 @@
 # BCD 2023 PROGRAM
 
-### Welcome (Open Lunch?) 12:00-13:00
+### Welcome (BYO Lunch) 12:00-13:00
 
 ### Talks 13:00–15:00
 
 - Timo Rick / Interactive Motion Design // Lottiefiles
-- Ted Davis / PHYDRALIVE
+- Ted Davis / PHYDRALIVE – Live-coding P5 + Hydra
 - Vanessa Göttle / red, orange and black – the opposite use of p5.js in 2 projects
 - Jasmin Meerhoff / Computer-aided poetry with Bash/Shell
 - Max Frischknecht / Generative Data Design for Digital Cultural Heritage
-- Lena / Audioreactive Unity
+- Lena Frei / Audioreactive Unity
+- Felix Roos / Live-coding audio with Streudel
 
 ### Break 15:00–15:30
 
@@ -19,6 +20,7 @@
 - yann, VCV
 - andrea + paulina, touchdesigner
 - max, Visualizing Cultural Heritage
+- felix, Streudel
 
 ### Apero / Dinner 18:30–20:30
 
@@ -27,6 +29,7 @@
 Music
 - Yann
 - Mark (?)
+- Felix ( maybe collab w/ ted?)
 
 Visuals
 - Alper (Live Tattooing with generated motives)
