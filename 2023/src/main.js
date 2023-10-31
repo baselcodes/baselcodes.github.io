@@ -8,19 +8,19 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 THREE.Cache.enabled = true;
 
 document.querySelector("#threejs").appendChild(renderer.domElement);
-document.querySelector("#hack").addEventListener("touchstart", (e) => {
-  e.preventDefault();
-});
+// document.querySelector("#hack").addEventListener("touchstart", (e) => {
+//   e.preventDefault();
+// });
 
-document.querySelectorAll("a").forEach((elem) => {
-  elem.addEventListener("touchstart", stopPropagation);
-  elem.addEventListener("touchmove", stopPropagation);
-  elem.addEventListener("touchend", stopPropagation);
-});
+// document.querySelectorAll("a").forEach((elem) => {
+//   elem.addEventListener("touchstart", stopPropagation);
+//   elem.addEventListener("touchmove", stopPropagation);
+//   elem.addEventListener("touchend", stopPropagation);
+// });
 
-function stopPropagation(e) {
-  e.stopPropagation();
-}
+// function stopPropagation(e) {
+//   e.stopPropagation();
+// }
 
 window.addEventListener("resize", onWindowResize, false);
 function onWindowResize() {
