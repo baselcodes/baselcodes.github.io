@@ -44,10 +44,10 @@ a:hover {
   position: absolute;
   top: 10%;
   left: 50%;
-  transform: translate(-50%);
+/*  transform: translate(-50%);*/
   background-color: transparent;
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
+  overflow: auto;
+/*  -webkit-overflow-scrolling: touch;*/
 }
 
 .opencall {
