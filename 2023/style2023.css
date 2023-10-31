@@ -42,7 +42,7 @@ a:hover {
 
 .container-fluid {
   position: absolute;
-  top: 40%;
+  top: 10%;
   left: 50%;
   transform: translate(-50%);
   background-color: transparent;
@@ -95,6 +95,10 @@ hr {
 
 .flex-row2 {
   flex-direction: row;
+}
+
+.stepdown{
+  padding-top:1.3em;
 }
 
 @media (max-width: 680px) {
