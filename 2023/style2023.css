@@ -14,7 +14,8 @@ html {
 }
 
 body {
-  background-color: transparent;
+/*  background-color: transparent;*/
+background:#3f33ff;
 }
 
 .text-4xl {
@@ -44,10 +45,10 @@ a:hover {
   position: absolute;
   top: 10%;
   left: 50%;
-/*  transform: translate(-50%);*/
+  transform: translate(-50%);
   background-color: transparent;
-  overflow: auto;
-/*  -webkit-overflow-scrolling: touch;*/
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 .opencall {
