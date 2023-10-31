@@ -79,7 +79,7 @@ function onMouseMove(event) {
 }
 function onDocumentTouchStart(event) {
   if (event.touches.length == 1) {
-    event.preventDefault();
+    // event.preventDefault();
     mouse.x = (event.touches[0].clientX / window.innerWidth) * 2 - 1;
     mouse.y = -(event.touches[0].clientY / window.innerHeight) * 2 + 1;
   }
@@ -87,7 +87,7 @@ function onDocumentTouchStart(event) {
 
 function onDocumentTouchMove(event) {
   if (event.touches.length == 1) {
-    event.preventDefault();
+    // event.preventDefault();
     mouse.x = (event.touches[0].clientX / window.innerWidth) * 2 - 1;
     mouse.y = -(event.touches[0].clientY / window.innerHeight) * 2 + 1;
   }
