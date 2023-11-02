@@ -38,7 +38,7 @@ a {
 }
 
 a:hover {
-  color: red;
+  color: #52ff33;
 }
 
 .container-fluid {
@@ -100,6 +100,16 @@ hr {
 
 .stepdown{
   padding-top:1.3em;
+}
+
+.pulse{
+  animation: pulse75 2s linear infinite;
+}
+
+@keyframes pulse75 {
+  0%   { opacity: .5 }
+  50%  { opacity: 1 }
+  100% { opacity: .5 }
 }
 
 @media (max-width: 680px) {
