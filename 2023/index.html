@@ -107,7 +107,7 @@
 					<hr>
 					<div class="flex flex-row2 text-2xl pb-2">
 						<div class="w-1-3">13:00–15:00<br>Talks</div>
-						<ul class="w-2-3 stepdown">
+						<ul id="list-talks" class="w-2-3 stepdown">
 							<li><a href="https://timorick.ch/" target="_blank" rel="noopener noreferrer">Timo Rick</a> / Interactive Motion Design // Lottiefiles</li>
 							<li><a href="https://www.teddavis.org/" target="_blank">Ted Davis</a> / PHYDRALIVE</li>
 							<li>Vanessa Göttle / Embodied period</li>
@@ -125,7 +125,7 @@
 							<br>
 							Workshops
 						</div>
-						<ul class="w-2-3 stepdown">
+						<ul id="list-workshops" class="w-2-3 stepdown">
 							<li><a href="https://www.teddavis.org/">Ted Davis</a> / PHYDRALIVE</li>
 							<li>Yann Martins / VCV</li>
 							<li><a href="https://zybinska.com/" target="_blank" rel="noopener noreferrer">Paulina Zybinska</a> + <a href="https://andreazaccuri.com/" target="_blank" rel="noopener noreferrer">Andrea Zaccuri</a> / TouchDesigner</li>
@@ -182,6 +182,18 @@
 	}
 </script>
 <script type="module" src="./src/main.js"> </script>
+<script type="text/javascript">
+
+	// shuffle order of talks/workshops (until set)
+	Element.prototype.shuffleChildren = function() {
+	  for (var i = this.children.length; i >= 0; i--) {
+	    this.appendChild(this.children[Math.random() * i | 0]);
+	  }
+	};
+
+	document.getElementById('list-talks').shuffleChildren()
+	document.getElementById('list-workshops').shuffleChildren()
+</script>
 <!-- <script>
 Init(document.getElementById("hack"), 2, 5);
 </script> -->
