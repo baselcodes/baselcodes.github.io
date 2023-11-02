@@ -10,7 +10,7 @@
 - Jasmin Meerhoff / Computer-aided poetry with Bash/Shell
 - Max Frischknecht / Generative Data Design for Digital Cultural Heritage
 - Lena Frei / Audioreactive Unity
-- Felix Roos / Live-coding audio with Streudel
+- Felix Roos / Live-coding audio with Strudel
 
 ### Break 15:00–15:30
 
@@ -20,7 +20,7 @@
 - yann, VCV
 - andrea + paulina, touchdesigner
 - max, Visualizing Cultural Heritage
-- felix, Streudel
+- felix, Strudel
 
 ### Apero / Dinner 18:30–20:30
 
