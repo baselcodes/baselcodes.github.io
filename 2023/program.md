@@ -28,12 +28,12 @@
 
 Music
 - Yann
-- Mark (?)
-- Felix ( maybe collab w/ ted?)
+- Mark (x)
+- Felix ( collab w/ ted?)
 
 Visuals
 - Alper (Live Tattooing with generated motives)
-- Sony
+- Sonny
 - Paulina
 - Ted
 - Andrea
