@@ -105,6 +105,15 @@ hr {
 .pulse{
   animation: pulse75 2s linear infinite;
 }
+#sponsors{
+  display:flex;
+  margin-top:25px;
+  justify-content: space-between;
+}
+#sponsors img{
+  padding:5px !important;
+  height:50px;
+}
 
 @keyframes pulse75 {
   0%   { opacity: .5 }

@@ -27,13 +27,13 @@
 ### Performances 20:30–23:00
 
 Music
-- Yann
-- Mark (x)
-- Felix ( collab w/ ted?)
+- Yann  
+- Mark (x)  
+- Felix ( collab w/ ted?)  
 
 Visuals
-- Alper (Live Tattooing with generated motives)
-- Sonny
-- Paulina
-- Ted
-- Andrea
+- Alper (Live Tattooing with generated motives)  
+- Sonny  
+- Paulina  
+- Ted  
+- Andrea  
